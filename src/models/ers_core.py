@@ -70,7 +70,7 @@ linkml_meta = LinkMLMeta({'default_prefix': 'https://w3id.org/linkml/examples/pe
                              'prefix_reference': 'https://w3id.org/linkml/'},
                   'schema': {'prefix_prefix': 'schema',
                              'prefix_reference': 'http://schema.org/'}},
-     'source_file': 'resources/linkml/ers-core_v0.01.yaml'} )
+     'source_file': 'resources/schema/ers-core_v0.01.yaml'} )
 
 class GenderEnum(str, Enum):
     male = "male"
