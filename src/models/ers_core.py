@@ -111,6 +111,8 @@ class Person(ConfiguredBaseModel):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'schema:Person',
          'from_schema': 'https://w3id.org/linkml/examples/personinfo'})
 
+    address: Optional[Address] = Field(default=None, json_schema_extra = { "linkml_meta": {'alias': 'address', 'domain': 'Person', 'domain_of': ['Person', 'Employment']} })
+    employment_history: Optional[list[Employment]] = Field(default=None, json_schema_extra = { "linkml_meta": {'alias': 'employment_history', 'domain': 'Person', 'domain_of': ['Person']} })
     id: str = Field(default=..., json_schema_extra = { "linkml_meta": {'alias': 'id', 'domain_of': ['Person']} })
     full_name: str = Field(default=..., json_schema_extra = { "linkml_meta": {'alias': 'full_name', 'domain_of': ['Person']} })
     age: Optional[int] = Field(default=None, ge=0, le=200, json_schema_extra = { "linkml_meta": {'alias': 'age', 'domain_of': ['Person']} })
@@ -133,6 +135,7 @@ class Employment(ConfiguredBaseModel):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'schema:Employment',
          'from_schema': 'https://w3id.org/linkml/examples/personinfo'})
 
+    address: Optional[Address] = Field(default=None, json_schema_extra = { "linkml_meta": {'alias': 'address', 'domain': 'Person', 'domain_of': ['Person', 'Employment']} })
     employer: Optional[str] = Field(default=None, json_schema_extra = { "linkml_meta": {'alias': 'employer', 'domain_of': ['Employment']} })
     start_date: Optional[date] = Field(default=None, json_schema_extra = { "linkml_meta": {'alias': 'start_date', 'domain_of': ['Employment']} })
     end_date: Optional[date] = Field(default=None, json_schema_extra = { "linkml_meta": {'alias': 'end_date', 'domain_of': ['Employment']} })

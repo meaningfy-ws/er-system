@@ -13,6 +13,16 @@ Alias: address
 
 
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Person](Person.md) |  |  no  |
+| [Employment](Employment.md) |  |  no  |
+
+
+
+
 
 
 ## Properties
@@ -56,6 +66,9 @@ from_schema: https://w3id.org/linkml/examples/personinfo
 rank: 1000
 domain: Person
 alias: address
+domain_of:
+- Person
+- Employment
 range: Address
 
 ```

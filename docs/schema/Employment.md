@@ -14,6 +14,17 @@ URI: [schema:Employment](http://schema.org/Employment)
  classDiagram
     class Employment
     click Employment href "../Employment/"
+      Employment : address
+        
+          
+    
+        
+        
+        Employment --> "0..1" Address : address
+        click Address href "../Address/"
+    
+
+        
       Employment : employer
         
       Employment : end_date
@@ -44,6 +55,7 @@ URI: [schema:Employment](http://schema.org/Employment)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [address](address.md) | 0..1 <br/> [Address](Address.md) |  | direct |
 | [employer](employer.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [start_date](start_date.md) | 0..1 <br/> [Date](Date.md) |  | direct |
 | [end_date](end_date.md) | 0..1 <br/> [Date](Date.md) |  | direct |
@@ -51,6 +63,13 @@ URI: [schema:Employment](http://schema.org/Employment)
 
 
 
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Person](Person.md) | [employment_history](employment_history.md) | range | [Employment](Employment.md) |
 
 
 
@@ -95,6 +114,8 @@ URI: [schema:Employment](http://schema.org/Employment)
 ```yaml
 name: Employment
 from_schema: https://w3id.org/linkml/examples/personinfo
+slots:
+- address
 attributes:
   employer:
     name: employer
@@ -172,6 +193,17 @@ attributes:
     domain_of:
     - Employment
     range: EmploymentStatusEnum
+  address:
+    name: address
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    rank: 1000
+    domain: Person
+    alias: address
+    owner: Employment
+    domain_of:
+    - Person
+    - Employment
+    range: Address
 class_uri: schema:Employment
 
 ```

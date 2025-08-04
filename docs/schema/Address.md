@@ -41,6 +41,14 @@ URI: [schema:PostalAddress](http://schema.org/PostalAddress)
 
 
 
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Person](Person.md) | [address](address.md) | range | [Address](Address.md) |
+| [Employment](Employment.md) | [address](address.md) | range | [Address](Address.md) |
+
+
 
 
 

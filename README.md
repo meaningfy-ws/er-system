@@ -48,3 +48,9 @@ The generated Python models can be found in the `src/models` directory. You can 
 ```bash
 make generate_models
 ```
+
+Once you are happy, you can also regenerate the documentation by running:
+
+```bash
+make generate_docs
+```

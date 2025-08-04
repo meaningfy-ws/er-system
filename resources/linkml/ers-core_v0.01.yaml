@@ -47,6 +47,9 @@ classes:
         range: uri
       salary:
         range: decimal
+    slots:
+      - address
+      - employment_history
   Address:
     class_uri: schema:PostalAddress
     attributes:
@@ -67,6 +70,8 @@ classes:
         range: date
       status:
         range: EmploymentStatusEnum
+    slots:
+      - address
 slots:
   address:
     domain: Person

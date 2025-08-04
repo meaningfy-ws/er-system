@@ -13,6 +13,15 @@ Alias: employment_history
 
 
 
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Person](Person.md) |  |  no  |
+
+
+
+
 
 
 ## Properties
@@ -58,6 +67,8 @@ from_schema: https://w3id.org/linkml/examples/personinfo
 rank: 1000
 domain: Person
 alias: employment_history
+domain_of:
+- Person
 range: Employment
 multivalued: true
 

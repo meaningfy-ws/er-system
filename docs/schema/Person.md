@@ -14,9 +14,31 @@ URI: [schema:Person](http://schema.org/Person)
  classDiagram
     class Person
     click Person href "../Person/"
+      Person : address
+        
+          
+    
+        
+        
+        Person --> "0..1" Address : address
+        click Address href "../Address/"
+    
+
+        
       Person : age
         
       Person : birth_date
+        
+      Person : employment_history
+        
+          
+    
+        
+        
+        Person --> "*" Employment : employment_history
+        click Employment href "../Employment/"
+    
+
         
       Person : full_name
         
@@ -50,6 +72,8 @@ URI: [schema:Person](http://schema.org/Person)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [address](address.md) | 0..1 <br/> [Address](Address.md) |  | direct |
+| [employment_history](employment_history.md) | * <br/> [Employment](Employment.md) |  | direct |
 | [id](id.md) | 1 <br/> [String](String.md) |  | direct |
 | [full_name](full_name.md) | 1 <br/> [String](String.md) |  | direct |
 | [age](age.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
@@ -60,6 +84,15 @@ URI: [schema:Person](http://schema.org/Person)
 
 
 
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [Person](Person.md) | [address](address.md) | domain | [Person](Person.md) |
+| [Person](Person.md) | [employment_history](employment_history.md) | domain | [Person](Person.md) |
+| [Employment](Employment.md) | [address](address.md) | domain | [Person](Person.md) |
 
 
 
@@ -104,6 +137,9 @@ URI: [schema:Person](http://schema.org/Person)
 ```yaml
 name: Person
 from_schema: https://w3id.org/linkml/examples/personinfo
+slots:
+- address
+- employment_history
 attributes:
   id:
     name: id
@@ -238,6 +274,28 @@ attributes:
     domain_of:
     - Person
     range: decimal
+  address:
+    name: address
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    rank: 1000
+    domain: Person
+    alias: address
+    owner: Person
+    domain_of:
+    - Person
+    - Employment
+    range: Address
+  employment_history:
+    name: employment_history
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    rank: 1000
+    domain: Person
+    alias: employment_history
+    owner: Person
+    domain_of:
+    - Person
+    range: Employment
+    multivalued: true
 class_uri: schema:Person
 
 ```
