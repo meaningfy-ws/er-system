@@ -1,11 +1,18 @@
 
 
-# Slot: id 
+# Slot: entityData 
+
+
+_A code string representing the entity details (eg, RDF description)._
+
+__
 
 
 
-URI: [ers:id](https://data.europa.eu/ers/schema/id)
-Alias: id
+
+
+URI: [ers:entityData](https://data.europa.eu/ers/schema/entityData)
+Alias: entityData
 
 <!-- no inheritance hierarchy -->
 
@@ -39,13 +46,20 @@ Alias: id
 
 
 
+### Schema Source
+
+
+* from schema: https://data.europa.eu/ers/schema
+
+
+
 
 ## Mappings
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ers:id |
-| native | ers:id |
+| self | ers:entityData |
+| native | ers:entityData |
 
 
 
@@ -54,11 +68,16 @@ Alias: id
 
 <details>
 ```yaml
-name: id
-alias: id
+name: entityData
+description: 'A code string representing the entity details (eg, RDF description).
+
+  '
+from_schema: https://data.europa.eu/ers/schema
+rank: 1000
+alias: entityData
+owner: Entity
 domain_of:
 - Entity
-- CanonicalEntity
 range: string
 
 ```

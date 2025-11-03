@@ -1,0 +1,104 @@
+id: https://data.europa.eu/ers/schema
+name: ersServiceDataSchema
+description: A LinkML schema for the ERS Services.
+version: 1.0-SNAPSHOT
+imports:
+  - linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ers: https://data.europa.eu/ers/schema/
+default_prefix: ers
+default_range: string
+
+classes:
+  Entity:
+    description: |
+      An entity is a representation of a real-world entity, as provided by the ERS.
+      It contains the entity data (e.g. RDF description) along with metadata about
+      the entity, such as its type and the data format used to represent it.
+    attributes:
+      id:
+        # TODO: Can't make it more precise, see https://github.com/linkml/linkml/issues/2992
+        range: string
+        description: |
+          A string containing the entity ID or URI (set by the ERS or, for canonical entities, by the ERE).
+      type:
+        description: |
+          A string representing the entity type URI (based on CET)
+      entityDataFormat:
+        description: |
+          A string about the MIME format of `entityData` (e.g. text/turtle, application/ld+json)
+      entityData:
+        description: |
+          A code string representing the entity details (eg, RDF description).
+
+  CanonicalEntity:
+    is_a: Entity  
+    description: |
+      A canonical entity is an entity that the ERE has created during the resolution process
+      of ERS entities. It has the same attributes of Entity, with a different name that specifies its
+      meaning.
+
+      The ID of a canonical entity is its canonical URI.
+    attributes:
+      id:
+        range: uri
+        description: |
+          The (canonical) URI of the canonical entity. This restricts the parent range to URIs only.
+
+  EntityResolutionRequest:
+    description: |
+      An entity resolution request sent by to the ERE, containing the entity to be resolved.
+    attributes:
+      requestId:
+        description: |
+          A string representing the unique ID of this request.
+      originator:
+        description: |
+          The ID or URI of the request originator.
+      metadata:
+        description: |
+          An arbitrary dictionary of further request metadata.
+        # TODO: I can't make Any to work, see https://github.com/linkml/linkml/issues/2992
+        # range: Any
+    examples:
+      - value: |
+          {
+            "entity": "epd:ent005 a org:Organization; ...   cccev:telephone \"+44 1924306780\" .",
+            "entityType": "http://www.w3.org/ns/org#Organization",
+            "entityDataFormat": "text/turtle",
+            "entityId": "http://data.europa.eu/ers/id/324fs3r345vx-aa32wa",
+            "originator": "TED SWS pipeline",
+            "requestId": "324fs3r345vx",
+            "metadata": {
+              "originator system": "VocBench editor",
+              "originator timestamp": "23748737643"
+            }
+          }
+
+  EntityResolution:
+    description: |
+      An entity resolution response sent by the ERE.
+      
+      This contains a reference to the canonical entity URI, not the canonical entity description, 
+      which is yielded through a separate channel/API endpoint.
+
+    attributes:
+      canonicalEntityUri:
+        # TODO: how is it translated to Python/SHACL/etc?
+        range: uri
+      sourceEntityId:
+        description: |
+          The ID or URI of the source entity as provided in the `EntityResolutionRequest`.
+      confidenceLevel:
+        range: float
+        description: |
+          A 0-1 value of how confident the ERE is about associating the original entity
+          with the canonical entity's cluster.
+    examples:
+      - value: |
+          {
+            "canonicalEntityUri": "http://data.europa.eu/ers/id/entity_canonical_URI_id1",
+            "sourceEntityId": "http://data.europa.eu/ers/id/324fs3r345vx-q11rea",
+            "confidenceLevel": 0.91
+          }

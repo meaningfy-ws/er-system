@@ -1,10 +1,10 @@
-# personinfo
+# ersServiceDataSchema
 
-Produced with the help of Google Gemini
+A LinkML schema for the ERS Services.
 
-URI: https://w3id.org/linkml/examples/personinfo
+URI: https://data.europa.eu/ers/schema
 
-Name: personinfo
+Name: ersServiceDataSchema
 
 
 
@@ -12,9 +12,10 @@ Name: personinfo
 
 | Class | Description |
 | --- | --- |
-| [Address](Address.md) |  |
-| [Employment](Employment.md) |  |
-| [Person](Person.md) |  |
+| [Entity](Entity.md) | An entity is a representation of a real-world entity, as provided by the ERS |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CanonicalEntity](CanonicalEntity.md) | A canonical entity is an entity that the ERE has created during the resolutio... |
+| [EntityResolution](EntityResolution.md) | An entity resolution response sent by the ERE |
+| [EntityResolutionRequest](EntityResolutionRequest.md) | An entity resolution request sent by to the ERE, containing the entity to be ... |
 
 
 
@@ -22,30 +23,22 @@ Name: personinfo
 
 | Slot | Description |
 | --- | --- |
-| [address](address.md) |  |
-| [age](age.md) |  |
-| [birth_date](birth_date.md) |  |
-| [city](city.md) |  |
-| [employer](employer.md) |  |
-| [employment_history](employment_history.md) |  |
-| [end_date](end_date.md) |  |
-| [full_name](full_name.md) |  |
-| [gender](gender.md) |  |
-| [id](id.md) |  |
-| [postal_code](postal_code.md) |  |
-| [salary](salary.md) |  |
-| [start_date](start_date.md) |  |
-| [status](status.md) |  |
-| [street_address](street_address.md) |  |
-| [website](website.md) |  |
+| [canonicalEntityUri](canonicalEntityUri.md) |  |
+| [confidenceLevel](confidenceLevel.md) | A 0-1 value of how confident the ERE is about associating the original entity |
+| [entityData](entityData.md) | A code string representing the entity details (eg, RDF description) |
+| [entityDataFormat](entityDataFormat.md) | A string about the MIME format of `entityData` (e |
+| [id](id.md) | A string containing the entity ID or URI (set by the ERS or, for canonical en... |
+| [metadata](metadata.md) | An arbitrary dictionary of further request metadata |
+| [originator](originator.md) | The ID or URI of the request originator |
+| [requestId](requestId.md) | A string representing the unique ID of this request |
+| [sourceEntityId](sourceEntityId.md) | The ID or URI of the source entity as provided in the `EntityResolutionReques... |
+| [type](type.md) | A string representing the entity type URI (based on CET) |
 
 
 ## Enumerations
 
 | Enumeration | Description |
 | --- | --- |
-| [EmploymentStatusEnum](EmploymentStatusEnum.md) |  |
-| [GenderEnum](GenderEnum.md) |  |
 
 
 ## Types

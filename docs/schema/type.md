@@ -1,11 +1,18 @@
 
 
-# Slot: id 
+# Slot: type 
+
+
+_A string representing the entity type URI (based on CET)_
+
+__
 
 
 
-URI: [ers:id](https://data.europa.eu/ers/schema/id)
-Alias: id
+
+
+URI: [ers:type](https://data.europa.eu/ers/schema/type)
+Alias: type
 
 <!-- no inheritance hierarchy -->
 
@@ -39,13 +46,20 @@ Alias: id
 
 
 
+### Schema Source
+
+
+* from schema: https://data.europa.eu/ers/schema
+
+
+
 
 ## Mappings
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ers:id |
-| native | ers:id |
+| self | ers:type |
+| native | ers:type |
 
 
 
@@ -54,11 +68,16 @@ Alias: id
 
 <details>
 ```yaml
-name: id
-alias: id
+name: type
+description: 'A string representing the entity type URI (based on CET)
+
+  '
+from_schema: https://data.europa.eu/ers/schema
+rank: 1000
+alias: type
+owner: Entity
 domain_of:
 - Entity
-- CanonicalEntity
 range: string
 
 ```

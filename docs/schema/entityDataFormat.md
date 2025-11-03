@@ -1,11 +1,18 @@
 
 
-# Slot: id 
+# Slot: entityDataFormat 
+
+
+_A string about the MIME format of `entityData` (e.g. text/turtle, application/ld+json)_
+
+__
 
 
 
-URI: [ers:id](https://data.europa.eu/ers/schema/id)
-Alias: id
+
+
+URI: [ers:entityDataFormat](https://data.europa.eu/ers/schema/entityDataFormat)
+Alias: entityDataFormat
 
 <!-- no inheritance hierarchy -->
 
@@ -39,13 +46,20 @@ Alias: id
 
 
 
+### Schema Source
+
+
+* from schema: https://data.europa.eu/ers/schema
+
+
+
 
 ## Mappings
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ers:id |
-| native | ers:id |
+| self | ers:entityDataFormat |
+| native | ers:entityDataFormat |
 
 
 
@@ -54,11 +68,16 @@ Alias: id
 
 <details>
 ```yaml
-name: id
-alias: id
+name: entityDataFormat
+description: 'A string about the MIME format of `entityData` (e.g. text/turtle, application/ld+json)
+
+  '
+from_schema: https://data.europa.eu/ers/schema
+rank: 1000
+alias: entityDataFormat
+owner: Entity
 domain_of:
 - Entity
-- CanonicalEntity
 range: string
 
 ```
