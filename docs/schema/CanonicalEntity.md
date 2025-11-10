@@ -5,13 +5,11 @@
 
 _A canonical entity is an entity that the ERE has created during the resolution process_
 
-_of ERS entities. It has the same attributes of Entity, with a different name that specifies its_
-
-_meaning._
+_of ERS entities._
 
 __
 
-_The ID of a canonical entity is its canonical URI._
+_TODO: we don't support lineage for the moment, see the ERE contract document._
 
 __
 
@@ -117,13 +115,10 @@ name: CanonicalEntity
 description: 'A canonical entity is an entity that the ERE has created during the
   resolution process
 
-  of ERS entities. It has the same attributes of Entity, with a different name that
-  specifies its
-
-  meaning.
+  of ERS entities.
 
 
-  The ID of a canonical entity is its canonical URI.
+  TODO: we don''t support lineage for the moment, see the ERE contract document.
 
   '
 from_schema: https://data.europa.eu/ers/schema
@@ -152,13 +147,10 @@ name: CanonicalEntity
 description: 'A canonical entity is an entity that the ERE has created during the
   resolution process
 
-  of ERS entities. It has the same attributes of Entity, with a different name that
-  specifies its
-
-  meaning.
+  of ERS entities.
 
 
-  The ID of a canonical entity is its canonical URI.
+  TODO: we don''t support lineage for the moment, see the ERE contract document.
 
   '
 from_schema: https://data.europa.eu/ers/schema
