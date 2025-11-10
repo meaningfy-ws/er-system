@@ -1,9 +1,9 @@
 
 
-# Slot: originator 
+# Slot: entity 
 
 
-_The ID or URI of the request originator._
+_The data about the entity to be resolved._
 
 __
 
@@ -11,8 +11,8 @@ __
 
 
 
-URI: [ers:originator](https://data.europa.eu/ers/schema/originator)
-Alias: originator
+URI: [ers:entity](https://data.europa.eu/ers/schema/entity)
+Alias: entity
 
 <!-- no inheritance hierarchy -->
 
@@ -24,8 +24,6 @@ Alias: originator
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Request](Request.md) | Root class to represent all the requests sent to the ERE |  no  |
-| [RebuildRequest](RebuildRequest.md) | A request to reset all the resolutions computed so far and rebuild them as  |  no  |
 | [EntityResolutionRequest](EntityResolutionRequest.md) | An entity resolution request sent to the ERE, containing the entity to be res... |  no  |
 
 
@@ -35,7 +33,7 @@ Alias: originator
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [Entity](Entity.md)
 
 
 
@@ -59,8 +57,8 @@ Alias: originator
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ers:originator |
-| native | ers:originator |
+| self | ers:entity |
+| native | ers:entity |
 
 
 
@@ -69,17 +67,17 @@ Alias: originator
 
 <details>
 ```yaml
-name: originator
-description: 'The ID or URI of the request originator.
+name: entity
+description: 'The data about the entity to be resolved.
 
   '
 from_schema: https://data.europa.eu/ers/schema
 rank: 1000
-alias: originator
-owner: Request
+alias: entity
+owner: EntityResolutionRequest
 domain_of:
-- Request
-range: string
+- EntityResolutionRequest
+range: Entity
 
 ```
 </details>

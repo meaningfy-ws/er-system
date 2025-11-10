@@ -3,7 +3,7 @@
 # Class: EntityResolutionRequest 
 
 
-_An entity resolution request sent by to the ERE, containing the entity to be resolved._
+_An entity resolution request sent to the ERE, containing the entity to be resolved._
 
 __
 
@@ -21,11 +21,27 @@ URI: [ers:EntityResolutionRequest](https://data.europa.eu/ers/schema/EntityResol
  classDiagram
     class EntityResolutionRequest
     click EntityResolutionRequest href "../EntityResolutionRequest/"
+      Request <|-- EntityResolutionRequest
+        click Request href "../Request/"
+      
+      EntityResolutionRequest : entity
+        
+          
+    
+        
+        
+        EntityResolutionRequest --> "0..1" Entity : entity
+        click Entity href "../Entity/"
+    
+
+        
       EntityResolutionRequest : metadata
         
       EntityResolutionRequest : originator
         
       EntityResolutionRequest : requestId
+        
+      EntityResolutionRequest : type
         
       
 ```
@@ -33,16 +49,22 @@ URI: [ers:EntityResolutionRequest](https://data.europa.eu/ers/schema/EntityResol
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* [Request](Request.md) [ [RequestOrResponseMixin](RequestOrResponseMixin.md)]
+    * **EntityResolutionRequest**
+
 
 
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [requestId](requestId.md) | 0..1 <br/> [String](String.md) | A string representing the unique ID of this request | direct |
-| [originator](originator.md) | 0..1 <br/> [String](String.md) | The ID or URI of the request originator | direct |
-| [metadata](metadata.md) | 0..1 <br/> [String](String.md) | An arbitrary dictionary of further request metadata | direct |
+| [entity](entity.md) | 0..1 <br/> [Entity](Entity.md) | The data about the entity to be resolved | direct |
+| [requestId](requestId.md) | 0..1 <br/> [String](String.md) | A string representing the unique ID of this request | [Request](Request.md) |
+| [originator](originator.md) | 0..1 <br/> [String](String.md) | The ID or URI of the request originator | [Request](Request.md) |
+| [type](type.md) | 0..1 <br/> [String](String.md) | The type of the request or result | [RequestOrResponseMixin](RequestOrResponseMixin.md) |
+| [metadata](metadata.md) | 0..1 <br/> [String](String.md) | An optional arbitrary dictionary of further request metadata | [RequestOrResponseMixin](RequestOrResponseMixin.md) |
 
 
 
@@ -59,12 +81,16 @@ URI: [ers:EntityResolutionRequest](https://data.europa.eu/ers/schema/EntityResol
 | Value |
 | --- |
 | {
-  "entity": "epd:ent005 a org:Organization; ...   cccev:telephone \"+44 1924306780\" .",
-  "entityType": "http://www.w3.org/ns/org#Organization",
-  "entityDataFormat": "text/turtle",
-  "entityId": "http://data.europa.eu/ers/id/324fs3r345vx-aa32wa",
-  "originator": "TED SWS pipeline",
+  "type": "EntityResolutionRequest",            
+  "entity": 
+  { 
+    "type": "http://www.w3.org/ns/org#Organization",
+    "id": "http://data.europa.eu/ers/id/324fs3r345vx-aa32wa",
+    "entityData": "epd:ent005 a org:Organization; ...   cccev:telephone \"+44 1924306780\" .",
+    "entityDataFormat": "text/turtle"
+  },
   "requestId": "324fs3r345vx",
+  "originator": "TED SWS pipeline",
   "metadata": {
     "originator system": "VocBench editor",
     "originator timestamp": "23748737643"
@@ -108,46 +134,32 @@ URI: [ers:EntityResolutionRequest](https://data.europa.eu/ers/schema/EntityResol
 <details>
 ```yaml
 name: EntityResolutionRequest
-description: 'An entity resolution request sent by to the ERE, containing the entity
+description: 'An entity resolution request sent to the ERE, containing the entity
   to be resolved.
 
   '
 examples:
-- value: "{\n  \"entity\": \"epd:ent005 a org:Organization; ...   cccev:telephone\
-    \ \\\"+44 1924306780\\\" .\",\n  \"entityType\": \"http://www.w3.org/ns/org#Organization\"\
-    ,\n  \"entityDataFormat\": \"text/turtle\",\n  \"entityId\": \"http://data.europa.eu/ers/id/324fs3r345vx-aa32wa\"\
-    ,\n  \"originator\": \"TED SWS pipeline\",\n  \"requestId\": \"324fs3r345vx\"\
-    ,\n  \"metadata\": {\n    \"originator system\": \"VocBench editor\",\n    \"\
-    originator timestamp\": \"23748737643\"\n  }\n}\n"
+- value: "{\n  \"type\": \"EntityResolutionRequest\",            \n  \"entity\": \n\
+    \  { \n    \"type\": \"http://www.w3.org/ns/org#Organization\",\n    \"id\": \"\
+    http://data.europa.eu/ers/id/324fs3r345vx-aa32wa\",\n    \"entityData\": \"epd:ent005\
+    \ a org:Organization; ...   cccev:telephone \\\"+44 1924306780\\\" .\",\n    \"\
+    entityDataFormat\": \"text/turtle\"\n  },\n  \"requestId\": \"324fs3r345vx\",\n\
+    \  \"originator\": \"TED SWS pipeline\",\n  \"metadata\": {\n    \"originator\
+    \ system\": \"VocBench editor\",\n    \"originator timestamp\": \"23748737643\"\
+    \n  }\n}\n"
 from_schema: https://data.europa.eu/ers/schema
+is_a: Request
 attributes:
-  requestId:
-    name: requestId
-    description: 'A string representing the unique ID of this request.
+  entity:
+    name: entity
+    description: 'The data about the entity to be resolved.
 
       '
     from_schema: https://data.europa.eu/ers/schema
     rank: 1000
     domain_of:
     - EntityResolutionRequest
-  originator:
-    name: originator
-    description: 'The ID or URI of the request originator.
-
-      '
-    from_schema: https://data.europa.eu/ers/schema
-    rank: 1000
-    domain_of:
-    - EntityResolutionRequest
-  metadata:
-    name: metadata
-    description: 'An arbitrary dictionary of further request metadata.
-
-      '
-    from_schema: https://data.europa.eu/ers/schema
-    rank: 1000
-    domain_of:
-    - EntityResolutionRequest
+    range: Entity
 
 ```
 </details>
@@ -157,19 +169,34 @@ attributes:
 <details>
 ```yaml
 name: EntityResolutionRequest
-description: 'An entity resolution request sent by to the ERE, containing the entity
+description: 'An entity resolution request sent to the ERE, containing the entity
   to be resolved.
 
   '
 examples:
-- value: "{\n  \"entity\": \"epd:ent005 a org:Organization; ...   cccev:telephone\
-    \ \\\"+44 1924306780\\\" .\",\n  \"entityType\": \"http://www.w3.org/ns/org#Organization\"\
-    ,\n  \"entityDataFormat\": \"text/turtle\",\n  \"entityId\": \"http://data.europa.eu/ers/id/324fs3r345vx-aa32wa\"\
-    ,\n  \"originator\": \"TED SWS pipeline\",\n  \"requestId\": \"324fs3r345vx\"\
-    ,\n  \"metadata\": {\n    \"originator system\": \"VocBench editor\",\n    \"\
-    originator timestamp\": \"23748737643\"\n  }\n}\n"
+- value: "{\n  \"type\": \"EntityResolutionRequest\",            \n  \"entity\": \n\
+    \  { \n    \"type\": \"http://www.w3.org/ns/org#Organization\",\n    \"id\": \"\
+    http://data.europa.eu/ers/id/324fs3r345vx-aa32wa\",\n    \"entityData\": \"epd:ent005\
+    \ a org:Organization; ...   cccev:telephone \\\"+44 1924306780\\\" .\",\n    \"\
+    entityDataFormat\": \"text/turtle\"\n  },\n  \"requestId\": \"324fs3r345vx\",\n\
+    \  \"originator\": \"TED SWS pipeline\",\n  \"metadata\": {\n    \"originator\
+    \ system\": \"VocBench editor\",\n    \"originator timestamp\": \"23748737643\"\
+    \n  }\n}\n"
 from_schema: https://data.europa.eu/ers/schema
+is_a: Request
 attributes:
+  entity:
+    name: entity
+    description: 'The data about the entity to be resolved.
+
+      '
+    from_schema: https://data.europa.eu/ers/schema
+    rank: 1000
+    alias: entity
+    owner: EntityResolutionRequest
+    domain_of:
+    - EntityResolutionRequest
+    range: Entity
   requestId:
     name: requestId
     description: 'A string representing the unique ID of this request.
@@ -180,7 +207,8 @@ attributes:
     alias: requestId
     owner: EntityResolutionRequest
     domain_of:
-    - EntityResolutionRequest
+    - Request
+    - Response
     range: string
   originator:
     name: originator
@@ -192,11 +220,27 @@ attributes:
     alias: originator
     owner: EntityResolutionRequest
     domain_of:
-    - EntityResolutionRequest
+    - Request
+    range: string
+  type:
+    name: type
+    description: "The type of the request or result.\n\nAs per LinkML specification,\
+      \ `designates_type` is used here in order to allow for this\nslot to tell the\
+      \ concrete subclass that an instance (such as a JSON object) belongs to.\n\n\
+      In other words, a particular request will have `type` set with values like \n\
+      `EntityResolutionRequest` or `EntityResolutionResult`\n"
+    from_schema: https://data.europa.eu/ers/schema
+    rank: 1000
+    designates_type: true
+    alias: type
+    owner: EntityResolutionRequest
+    domain_of:
+    - RequestOrResponseMixin
+    - Entity
     range: string
   metadata:
     name: metadata
-    description: 'An arbitrary dictionary of further request metadata.
+    description: 'An optional arbitrary dictionary of further request metadata.
 
       '
     from_schema: https://data.europa.eu/ers/schema
@@ -204,7 +248,7 @@ attributes:
     alias: metadata
     owner: EntityResolutionRequest
     domain_of:
-    - EntityResolutionRequest
+    - RequestOrResponseMixin
     range: string
 
 ```

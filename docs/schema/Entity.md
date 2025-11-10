@@ -62,6 +62,13 @@ URI: [ers:Entity](https://data.europa.eu/ers/schema/Entity)
 
 
 
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [EntityResolutionRequest](EntityResolutionRequest.md) | [entity](entity.md) | range | [Entity](Entity.md) |
+
+
 
 
 
@@ -127,12 +134,12 @@ attributes:
     range: string
   type:
     name: type
-    description: 'A string representing the entity type URI (based on CET)
-
-      '
+    description: "A string representing the entity type URI (based on CET).\n\nNote\
+      \ that we don't use the `designates_type` thing here, since entities or canonical\
+      \ entities \nare always used in clearly distinct contexts.\n"
     from_schema: https://data.europa.eu/ers/schema
-    rank: 1000
     domain_of:
+    - RequestOrResponseMixin
     - Entity
   entityDataFormat:
     name: entityDataFormat
@@ -188,14 +195,14 @@ attributes:
     range: string
   type:
     name: type
-    description: 'A string representing the entity type URI (based on CET)
-
-      '
+    description: "A string representing the entity type URI (based on CET).\n\nNote\
+      \ that we don't use the `designates_type` thing here, since entities or canonical\
+      \ entities \nare always used in clearly distinct contexts.\n"
     from_schema: https://data.europa.eu/ers/schema
-    rank: 1000
     alias: type
     owner: Entity
     domain_of:
+    - RequestOrResponseMixin
     - Entity
     range: string
   entityDataFormat:

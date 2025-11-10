@@ -24,8 +24,8 @@ Alias: entityDataFormat
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CanonicalEntity](CanonicalEntity.md) | A canonical entity is an entity that the ERE has created during the resolutio... |  no  |
 | [Entity](Entity.md) | An entity is a representation of a real-world entity, as provided by the ERS |  no  |
+| [CanonicalEntity](CanonicalEntity.md) | A canonical entity is an entity that the ERE has created during the resolutio... |  no  |
 
 
 

@@ -14,8 +14,13 @@ Name: ersServiceDataSchema
 | --- | --- |
 | [Entity](Entity.md) | An entity is a representation of a real-world entity, as provided by the ERS |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CanonicalEntity](CanonicalEntity.md) | A canonical entity is an entity that the ERE has created during the resolutio... |
-| [EntityResolution](EntityResolution.md) | An entity resolution response sent by the ERE |
-| [EntityResolutionRequest](EntityResolutionRequest.md) | An entity resolution request sent by to the ERE, containing the entity to be ... |
+| [Request](Request.md) | Root class to represent all the requests sent to the ERE |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[EntityResolutionRequest](EntityResolutionRequest.md) | An entity resolution request sent to the ERE, containing the entity to be res... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RebuildRequest](RebuildRequest.md) | A request to reset all the resolutions computed so far and rebuild them as  |
+| [RequestOrResponseMixin](RequestOrResponseMixin.md) | Root mixin to represent attributes common to both requests and results |
+| [Response](Response.md) | Root class to represent all the responses sent by the ERE |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[EntityResolution](EntityResolution.md) | An entity resolution response sent by the ERE |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RebuildResponse](RebuildResponse.md) | A response to a `RebuildRequest`, confirming that the rebuild process has sta... |
 
 
 
@@ -23,16 +28,16 @@ Name: ersServiceDataSchema
 
 | Slot | Description |
 | --- | --- |
-| [canonicalEntityUri](canonicalEntityUri.md) |  |
+| [canonicalEntity](canonicalEntity.md) | The canonical entity that the ERE has associated to the original entity |
 | [confidenceLevel](confidenceLevel.md) | A 0-1 value of how confident the ERE is about associating the original entity |
+| [entity](entity.md) | The data about the entity to be resolved |
 | [entityData](entityData.md) | A code string representing the entity details (eg, RDF description) |
 | [entityDataFormat](entityDataFormat.md) | A string about the MIME format of `entityData` (e |
 | [id](id.md) | A string containing the entity ID or URI (set by the ERS or, for canonical en... |
-| [metadata](metadata.md) | An arbitrary dictionary of further request metadata |
+| [metadata](metadata.md) | An optional arbitrary dictionary of further request metadata |
 | [originator](originator.md) | The ID or URI of the request originator |
 | [requestId](requestId.md) | A string representing the unique ID of this request |
-| [sourceEntityId](sourceEntityId.md) | The ID or URI of the source entity as provided in the `EntityResolutionReques... |
-| [type](type.md) | A string representing the entity type URI (based on CET) |
+| [type](type.md) | The type of the request or result |
 
 
 ## Enumerations

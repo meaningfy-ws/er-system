@@ -66,6 +66,13 @@ URI: [ers:CanonicalEntity](https://data.europa.eu/ers/schema/CanonicalEntity)
 
 
 
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [EntityResolution](EntityResolution.md) | [canonicalEntity](canonicalEntity.md) | range | [CanonicalEntity](CanonicalEntity.md) |
+
+
 
 
 
@@ -172,14 +179,14 @@ attributes:
     range: uri
   type:
     name: type
-    description: 'A string representing the entity type URI (based on CET)
-
-      '
+    description: "A string representing the entity type URI (based on CET).\n\nNote\
+      \ that we don't use the `designates_type` thing here, since entities or canonical\
+      \ entities \nare always used in clearly distinct contexts.\n"
     from_schema: https://data.europa.eu/ers/schema
-    rank: 1000
     alias: type
     owner: CanonicalEntity
     domain_of:
+    - RequestOrResponseMixin
     - Entity
     range: string
   entityDataFormat:

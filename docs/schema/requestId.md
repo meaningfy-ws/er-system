@@ -3,13 +3,6 @@
 # Slot: requestId 
 
 
-_A string representing the unique ID of this request._
-
-__
-
-
-
-
 
 URI: [ers:requestId](https://data.europa.eu/ers/schema/requestId)
 Alias: requestId
@@ -24,7 +17,12 @@ Alias: requestId
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [EntityResolutionRequest](EntityResolutionRequest.md) | An entity resolution request sent by to the ERE, containing the entity to be ... |  no  |
+| [RebuildRequest](RebuildRequest.md) | A request to reset all the resolutions computed so far and rebuild them as  |  no  |
+| [RebuildResponse](RebuildResponse.md) | A response to a `RebuildRequest`, confirming that the rebuild process has sta... |  no  |
+| [EntityResolution](EntityResolution.md) | An entity resolution response sent by the ERE |  no  |
+| [EntityResolutionRequest](EntityResolutionRequest.md) | An entity resolution request sent to the ERE, containing the entity to be res... |  no  |
+| [Request](Request.md) | Root class to represent all the requests sent to the ERE |  no  |
+| [Response](Response.md) | Root class to represent all the responses sent by the ERE |  no  |
 
 
 
@@ -45,13 +43,6 @@ Alias: requestId
 
 
 
-### Schema Source
-
-
-* from schema: https://data.europa.eu/ers/schema
-
-
-
 
 ## Mappings
 
@@ -68,15 +59,10 @@ Alias: requestId
 <details>
 ```yaml
 name: requestId
-description: 'A string representing the unique ID of this request.
-
-  '
-from_schema: https://data.europa.eu/ers/schema
-rank: 1000
 alias: requestId
-owner: EntityResolutionRequest
 domain_of:
-- EntityResolutionRequest
+- Request
+- Response
 range: string
 
 ```
