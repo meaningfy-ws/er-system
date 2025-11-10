@@ -208,3 +208,6 @@ __marimo__/
 
 # Eclipse and derived tools (eg, megit)
 .project
+
+# MacOS
+.DS_Store
