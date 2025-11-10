@@ -164,10 +164,9 @@ classes:
     is_a: Entity  
     description: |
       A canonical entity is an entity that the ERE has created during the resolution process
-      of ERS entities. It has the same attributes of Entity, with a different name that specifies its
-      meaning.
+      of ERS entities.
 
-      The ID of a canonical entity is its canonical URI.
+      TODO: we don't support lineage for the moment, see the ERE contract document.
     attributes:
       id:
         range: uri
