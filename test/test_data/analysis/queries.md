@@ -98,3 +98,20 @@ WHERE {
 ORDER BY ?type
 ```
 
+## All the types in sameAs relations
+
+```sql
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX org: <http://www.w3.org/ns/org#>
+prefix epd: <http://data.europa.eu/a4g/resource/>
+
+SELECT DISTINCT ?type
+WHERE {
+  ?e1 owl:sameAs ?e2.
+
+  { ?e1 a ?type. } 
+  UNION { ?e2 a ?type. }
+} LIMIT 1000
+```
