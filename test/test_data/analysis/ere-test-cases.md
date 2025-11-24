@@ -59,25 +59,25 @@ PREFIX time:  <http://www.w3.org/2006/time#>
 PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
 
 epd:id_2023-S-210-661238_ReviewerOrganisation_LLhJHMi9mby8ixbkfyGoWj
-        rdf:type                    org:Organization , epo:Procedure;
-        epo:hasLegalName            "Комисия за защита на конкуренцията"@bg;
-        epo:hasPrimaryContactPoint  epd:id_2023-S-210-661238_ReviewerContactPoint_LLhJHMi9mby8ixbkfyGoWj;
-        cccev:registeredAddress     epd:id_2023-S-210-661238_ReviewerOrganisationAddress_LLhJHMi9mby8ixbkfyGoWj
+  rdf:type                    org:Organization , epo:Procedure;
+  epo:hasLegalName            "Комисия за защита на конкуренцията"@bg;
+  epo:hasPrimaryContactPoint  epd:id_2023-S-210-661238_ReviewerContactPoint_LLhJHMi9mby8ixbkfyGoWj;
+  cccev:registeredAddress     epd:id_2023-S-210-661238_ReviewerOrganisationAddress_LLhJHMi9mby8ixbkfyGoWj
 .
 
 epd:id_2023-S-210-661238_ReviewerContactPoint_LLhJHMi9mby8ixbkfyGoWj
-        rdf:type                cccev:ContactPoint;
-        epo:hasFax              "+359 29807315";
-        epo:hasInternetAddress  "http://www.cpc.bg"^^xsd:anyURI;
-        cccev:email             "delovodstvo@cpc.bg";
-        cccev:telephone         "+359 29356113" .
+  rdf:type                cccev:ContactPoint;
+  epo:hasFax              "+359 29807315";
+  epo:hasInternetAddress  "http://www.cpc.bg"^^xsd:anyURI;
+  cccev:email             "delovodstvo@cpc.bg";
+  cccev:telephone         "+359 29356113" .
 
 epd:id_2023-S-210-661238_ReviewerOrganisationAddress_LLhJHMi9mby8ixbkfyGoWj
-        rdf:type            locn:Address;
-        epo:hasCountryCode  <http://publications.europa.eu/resource/authority/country/BGR>;
-        locn:postCode       "1000";
-        locn:postName       "София";
-        locn:thoroughfare   "бул. Витоша № 18" .
+  rdf:type            locn:Address;
+  epo:hasCountryCode  <http://publications.europa.eu/resource/authority/country/BGR>;
+  locn:postCode       "1000";
+  locn:postName       "София";
+  locn:thoroughfare   "бул. Витоша № 18" .
 ```
 
 *Note*: in the following RDF abstracts, we will omit the namespace declarations.
@@ -88,6 +88,7 @@ As you can see, The data have a triple-centric description of the entity to reso
 
 In this case, we have a canonical entity with high confidence matching score (due to key fields being identical):
 
+```javascript
 {
   "type": "EntityResolution",
   "sourceEntityId": "https://publications.europa.eu/resource/authority/a4g/resource/id_2023-S-210-661238_ReviewerOrganisation_LLhJHMi9mby8ixbkfyGoWj",
@@ -101,30 +102,31 @@ In this case, we have a canonical entity with high confidence matching score (du
     "entityDataFormat": "text/turtle"
   }
 }
+```
 
 This is the content for `entityData`:
 
 ```javascript
 epd:id_2023-S-210-662860_ReviewerOrganisation_LLhJHMi9mby8ixbkfyGoWj
-        rdf:type                    org:Organization , epo:Procedure;
-        epo:hasLegalName            "Комисия за защита на конкуренцията"@bg;
-        epo:hasPrimaryContactPoint  epd:id_2023-S-210-662860_ReviewerContactPoint_LLhJHMi9mby8ixbkfyGoWj;
-        cccev:registeredAddress     epd:id_2023-S-210-662860_ReviewerOrganisationAddress_LLhJHMi9mby8ixbkfyGoWj
+  rdf:type                    org:Organization , epo:Procedure;
+  epo:hasLegalName            "Комисия за защита на конкуренцията"@bg;
+  epo:hasPrimaryContactPoint  epd:id_2023-S-210-662860_ReviewerContactPoint_LLhJHMi9mby8ixbkfyGoWj;
+  cccev:registeredAddress     epd:id_2023-S-210-662860_ReviewerOrganisationAddress_LLhJHMi9mby8ixbkfyGoWj
 .
 
 epd:id_2023-S-210-662860_ReviewerContactPoint_LLhJHMi9mby8ixbkfyGoWj
-        rdf:type                cccev:ContactPoint;
-        epo:hasFax              "+359 29807315";
-        epo:hasInternetAddress  "http://www.cpc.bg"^^xsd:anyURI;
-        cccev:email             "delovodstvo@cpc.bg";
-        cccev:telephone         "+359 29356113" .
+  rdf:type                cccev:ContactPoint;
+  epo:hasFax              "+359 29807315";
+  epo:hasInternetAddress  "http://www.cpc.bg"^^xsd:anyURI;
+  cccev:email             "delovodstvo@cpc.bg";
+  cccev:telephone         "+359 29356113" .
 
 epd:id_2023-S-210-662860_ReviewerOrganisationAddress_LLhJHMi9mby8ixbkfyGoWj
-        rdf:type            locn:Address;
-        epo:hasCountryCode  <http://publications.europa.eu/resource/authority/country/BGR>;
-        locn:postCode       "1000";
-        locn:postName       "София";
-        locn:thoroughfare   "бул. Витоша № 18" .
+  rdf:type            locn:Address;
+  epo:hasCountryCode  <http://publications.europa.eu/resource/authority/country/BGR>;
+  locn:postCode       "1000";
+  locn:postName       "София";
+  locn:thoroughfare   "бул. Витоша № 18" .
 ```
 
 
@@ -156,18 +158,18 @@ Entity data:
 
 ```javascript
 epd:id_2023-S-210-661039_ContractorOrganisation_KoxN6kkynnWenCXubDp4jC
-        rdf:type                org:Organization;
-        epo:hasLegalName        "Eiffage Rail NL der Eiffage Infra-Bau SE"@de;
-        cccev:registeredAddress epd:id_2023-S-210-661039_ContractorOrganisationAddress_KoxN6kkynnWenCXubDp4jC
+  rdf:type                org:Organization;
+  epo:hasLegalName        "Eiffage Rail NL der Eiffage Infra-Bau SE"@de;
+  cccev:registeredAddress epd:id_2023-S-210-661039_ContractorOrganisationAddress_KoxN6kkynnWenCXubDp4jC
 .
 
 epd:id_2023-S-210-661039_ContractorOrganisationAddress_KoxN6kkynnWenCXubDp4jC
-        rdf:type            locn:Address;
-        epo:hasCountryCode  <http://publications.europa.eu/resource/authority/country/DEU>;
-        epo:hasNutsCode     <http://data.europa.eu/nuts/code/DEA55>;
-        locn:postCode       "44652";
-        locn:postName       "Herne";
-        locn:thoroughfare   "Landgrafenstr. 29" .
+  rdf:type            locn:Address;
+  epo:hasCountryCode  <http://publications.europa.eu/resource/authority/country/DEU>;
+  epo:hasNutsCode     <http://data.europa.eu/nuts/code/DEA55>;
+  locn:postCode       "44652";
+  locn:postName       "Herne";
+  locn:thoroughfare   "Landgrafenstr. 29" .
 ```
 
 **Resolution**:
@@ -194,18 +196,18 @@ Canonical entity data:
 
 ```javascript
 epd:id_2023-S-210-661039_ContractorOrganisationModification_4jxq5KuyAaGTzG5CNj9Ycp
-        rdf:type                org:Organization;
-        epo:hasLegalName        "Eiffage Rail NL der Eiffage Infra-Bau Se"@de;
-        cccev:registeredAddress epd:id_2023-S-210-661039_ContractorOrganisationAddressModification_4jxq5KuyAaGTzG5CNj9Ycp
+  rdf:type                org:Organization;
+  epo:hasLegalName        "Eiffage Rail NL der Eiffage Infra-Bau Se"@de;
+  cccev:registeredAddress epd:id_2023-S-210-661039_ContractorOrganisationAddressModification_4jxq5KuyAaGTzG5CNj9Ycp
 .
 
 epd:id_2023-S-210-661039_ContractorOrganisationAddressModification_4jxq5KuyAaGTzG5CNj9Ycp
-        rdf:type            locn:Address;
-        epo:hasCountryCode  <http://publications.europa.eu/resource/authority/country/DEU>;
-        epo:hasNutsCode     <http://data.europa.eu/nuts/code/DEA55>;
-        locn:postCode       "44652";
-        locn:postName       "Herne";
-        locn:thoroughfare   "Landgrafenstr. 29" .
+  rdf:type            locn:Address;
+  epo:hasCountryCode  <http://publications.europa.eu/resource/authority/country/DEU>;
+  epo:hasNutsCode     <http://data.europa.eu/nuts/code/DEA55>;
+  locn:postCode       "44652";
+  locn:postName       "Herne";
+  locn:thoroughfare   "Landgrafenstr. 29" .
 ```
 
 ---
@@ -235,15 +237,15 @@ Entity data:
 
 ```javascript
 epd:id_2023-S-210-661197_ReviewerOrganisation_bdZjimbzCaRXbeYeBmF94j
-        rdf:type                org:Organization;
-        epo:hasLegalName        "tribunal administratif de Paris"@fr;
-        cccev:registeredAddress epd:id_2023-S-210-661197_ReviewerOrganisationAddress_bdZjimbzCaRXbeYeBmF94j
+  rdf:type                org:Organization;
+  epo:hasLegalName        "tribunal administratif de Paris"@fr;
+  cccev:registeredAddress epd:id_2023-S-210-661197_ReviewerOrganisationAddress_bdZjimbzCaRXbeYeBmF94j
 .
 
 epd:id_2023-S-210-661197_ReviewerOrganisationAddress_bdZjimbzCaRXbeYeBmF94j
-        rdf:type            locn:Address;
-        epo:hasCountryCode  <http://publications.europa.eu/resource/authority/country/FRA>;
-        locn:postName       "Paris" .
+  rdf:type            locn:Address;
+  epo:hasCountryCode  <http://publications.europa.eu/resource/authority/country/FRA>;
+  locn:postName       "Paris" .
 ```
 
 **Resolution**:
@@ -296,26 +298,26 @@ Entity data:
 
 ```javascript
 epd:id_2023-S-210-662861_Procedure_faF7Q5dyoGpXu3Ru4RGg73
-        rdf:type                            epo:Procedure;
-        epo:hasDescription                  "Servicii de exploatare forestiera"@ro;
-        epo:hasID                           epd:id_2023-S-210-662861_ProcedureIdentifier_faF7Q5dyoGpXu3Ru4RGg73;
-        epo:hasLegalBasis                   <http://publications.europa.eu/resource/authority/legal-basis/32014L0024>;
-        epo:hasProcedureType                <http://publications.europa.eu/resource/authority/procurement-procedure-type/neg-wo-call>;
-        epo:hasProcurementScopeDividedIntoLot epd:id_2023-S-210-662861_Lot_DgNm7RuiSQ47VBTvdrHsRv;
-        epo:hasPurpose                      epd:id_2023-S-210-662861_ProcedurePurpose_faF7Q5dyoGpXu3Ru4RGg73;
-        epo:hasTitle                        "Servicii de exploatare forestiera Negociere 10 - 2023 dssv"@ro;
-        epo:isCoveredByGPA                  false;
-        epo:isSubjectToProcedureSpecificTerm epd:id_2023-S-210-662861_DirectAwardTerm_C5nS5y4XErvUqzRNMARW8r
+  rdf:type                            epo:Procedure;
+  epo:hasDescription                  "Servicii de exploatare forestiera"@ro;
+  epo:hasID                           epd:id_2023-S-210-662861_ProcedureIdentifier_faF7Q5dyoGpXu3Ru4RGg73;
+  epo:hasLegalBasis                   <http://publications.europa.eu/resource/authority/legal-basis/32014L0024>;
+  epo:hasProcedureType                <http://publications.europa.eu/resource/authority/procurement-procedure-type/neg-wo-call>;
+  epo:hasProcurementScopeDividedIntoLot epd:id_2023-S-210-662861_Lot_DgNm7RuiSQ47VBTvdrHsRv;
+  epo:hasPurpose                      epd:id_2023-S-210-662861_ProcedurePurpose_faF7Q5dyoGpXu3Ru4RGg73;
+  epo:hasTitle                        "Servicii de exploatare forestiera Negociere 10 - 2023 dssv"@ro;
+  epo:isCoveredByGPA                  false;
+  epo:isSubjectToProcedureSpecificTerm epd:id_2023-S-210-662861_DirectAwardTerm_C5nS5y4XErvUqzRNMARW8r
 .
 
 epd:id_2023-S-210-662861_ProcedureIdentifier_faF7Q5dyoGpXu3Ru4RGg73
-        rdf:type                epo:Identifier;
-        epo:hasIdentifierValue  "10_2023" .
+  rdf:type                epo:Identifier;
+  epo:hasIdentifierValue  "10_2023" .
 
 epd:id_2023-S-210-662861_ProcedurePurpose_faF7Q5dyoGpXu3Ru4RGg73
-        rdf:type                    epo:Purpose;
-        epo:hasContractNatureType   <http://publications.europa.eu/resource/authority/contract-nature/services>;
-        epo:hasMainClassification   <http://data.europa.eu/cpv/cpv/77211100> .
+  rdf:type                    epo:Purpose;
+  epo:hasContractNatureType   <http://publications.europa.eu/resource/authority/contract-nature/services>;
+  epo:hasMainClassification   <http://data.europa.eu/cpv/cpv/77211100> .
 ```
 
 **Resolution**:
@@ -342,26 +344,26 @@ Canonical entity data (nearly identical):
 
 ```javascript
 epd:id_2023-S-210-663131_Procedure_faF7Q5dyoGpXu3Ru4RGg73
-        rdf:type                            epo:Procedure;
-        epo:hasDescription                  "Servicii de exploatare forestiera"@ro;
-        epo:hasID                           epd:id_2023-S-210-663131_ProcedureIdentifier_faF7Q5dyoGpXu3Ru4RGg73;
-        epo:hasLegalBasis                   <http://publications.europa.eu/resource/authority/legal-basis/32014L0024>;
-        epo:hasProcedureType                <http://publications.europa.eu/resource/authority/procurement-procedure-type/neg-wo-call>;
-        epo:hasProcurementScopeDividedIntoLot epd:id_2023-S-210-663131_Lot_DgNm7RuiSQ47VBTvdrHsRv;
-        epo:hasPurpose                      epd:id_2023-S-210-663131_ProcedurePurpose_faF7Q5dyoGpXu3Ru4RGg73;
-        epo:hasTitle                        "Servicii de exploatare forestiera Negociere 10 - 2023 dssv"@ro;
-        epo:isCoveredByGPA                  false;
-        epo:isSubjectToProcedureSpecificTerm epd:id_2023-S-210-663131_DirectAwardTerm_C5nS5y4XErvUqzRNMARW8r
+  rdf:type                            epo:Procedure;
+  epo:hasDescription                  "Servicii de exploatare forestiera"@ro;
+  epo:hasID                           epd:id_2023-S-210-663131_ProcedureIdentifier_faF7Q5dyoGpXu3Ru4RGg73;
+  epo:hasLegalBasis                   <http://publications.europa.eu/resource/authority/legal-basis/32014L0024>;
+  epo:hasProcedureType                <http://publications.europa.eu/resource/authority/procurement-procedure-type/neg-wo-call>;
+  epo:hasProcurementScopeDividedIntoLot epd:id_2023-S-210-663131_Lot_DgNm7RuiSQ47VBTvdrHsRv;
+  epo:hasPurpose                      epd:id_2023-S-210-663131_ProcedurePurpose_faF7Q5dyoGpXu3Ru4RGg73;
+  epo:hasTitle                        "Servicii de exploatare forestiera Negociere 10 - 2023 dssv"@ro;
+  epo:isCoveredByGPA                  false;
+  epo:isSubjectToProcedureSpecificTerm epd:id_2023-S-210-663131_DirectAwardTerm_C5nS5y4XErvUqzRNMARW8r
 .
 
 epd:id_2023-S-210-663131_ProcedureIdentifier_faF7Q5dyoGpXu3Ru4RGg73
-        rdf:type                epo:Identifier;
-        epo:hasIdentifierValue  "10_2023" .
+  rdf:type                epo:Identifier;
+  epo:hasIdentifierValue  "10_2023" .
 
 epd:id_2023-S-210-663131_ProcedurePurpose_faF7Q5dyoGpXu3Ru4RGg73
-        rdf:type                    epo:Purpose;
-        epo:hasContractNatureType   <http://publications.europa.eu/resource/authority/contract-nature/services>;
-        epo:hasMainClassification   <http://data.europa.eu/cpv/cpv/77211100> .
+  rdf:type                    epo:Purpose;
+  epo:hasContractNatureType   <http://publications.europa.eu/resource/authority/contract-nature/services>;
+  epo:hasMainClassification   <http://data.europa.eu/cpv/cpv/77211100> .
 ```
 
 ---
@@ -391,22 +393,22 @@ Entity data:
 
 ```javascript
 epd:id_2023-S-210-663534_Procedure_aE3iyMRsoF9Qvy4eFQRpLT
-        rdf:type                            epo:Procedure;
-        epo:foreseesContractSpecificTerm    epd:id_2023-S-210-663534_ContractTermProcedure_fqfw5hANKbaKT6uyGM9WEZ;
-        epo:hasID                           epd:id_2023-S-210-663534_ProcedureIdentifier_aE3iyMRsoF9Qvy4eFQRpLT;
-        epo:hasProcurementScopeDividedIntoLot epd:id_2023-S-210-663534_Lot_mtBaW8k5EC8G5zB7LwJPww;
-        epo:hasPurpose                      epd:id_2023-S-210-663534_ProcedurePurpose_aE3iyMRsoF9Qvy4eFQRpLT;
-        epo:hasTitle                        "S21, PA 1.7; Bahntechnik Oberbau Los A , (19FEI37404) 20FEI44393"@de;
-        epo:isSubjectToProcedureSpecificTerm epd:id_2023-S-210-663534_ReviewTerm_7TwSLEC9PvaDEEAmGcz5G4
+  rdf:type                            epo:Procedure;
+  epo:foreseesContractSpecificTerm    epd:id_2023-S-210-663534_ContractTermProcedure_fqfw5hANKbaKT6uyGM9WEZ;
+  epo:hasID                           epd:id_2023-S-210-663534_ProcedureIdentifier_aE3iyMRsoF9Qvy4eFQRpLT;
+  epo:hasProcurementScopeDividedIntoLot epd:id_2023-S-210-663534_Lot_mtBaW8k5EC8G5zB7LwJPww;
+  epo:hasPurpose                      epd:id_2023-S-210-663534_ProcedurePurpose_aE3iyMRsoF9Qvy4eFQRpLT;
+  epo:hasTitle                        "S21, PA 1.7; Bahntechnik Oberbau Los A , (19FEI37404) 20FEI44393"@de;
+  epo:isSubjectToProcedureSpecificTerm epd:id_2023-S-210-663534_ReviewTerm_7TwSLEC9PvaDEEAmGcz5G4
 .
 
 epd:id_2023-S-210-663534_ProcedureIdentifier_aE3iyMRsoF9Qvy4eFQRpLT
-        rdf:type                epo:Identifier;
-        epo:hasIdentifierValue  "2019/S 039-088890" .
+  rdf:type                epo:Identifier;
+  epo:hasIdentifierValue  "2019/S 039-088890" .
 
 epd:id_2023-S-210-663534_ProcedurePurpose_aE3iyMRsoF9Qvy4eFQRpLT
-        rdf:type                    epo:Purpose;
-        epo:hasMainClassification   <http://data.europa.eu/cpv/cpv/45236000> .
+  rdf:type                    epo:Purpose;
+  epo:hasMainClassification   <http://data.europa.eu/cpv/cpv/45236000> .
 ```
 
 **Resolution**:
@@ -433,22 +435,22 @@ Canonical entity data:
 
 ```javascript
 epd:id_2023-S-210-661039_Procedure_aE3iyMRsoF9Qvy4eFQRpLT
-        rdf:type                            epo:Procedure;
-        epo:foreseesContractSpecificTerm    epd:id_2023-S-210-661039_ContractTermProcedure_fqfw5hANKbaKT6uyGM9WEZ;
-        epo:hasID                           epd:id_2023-S-210-661039_ProcedureIdentifier_aE3iyMRsoF9Qvy4eFQRpLT;
-        epo:hasProcurementScopeDividedIntoLot epd:id_2023-S-210-661039_Lot_mtBaW8k5EC8G5zB7LwJPww;
-        epo:hasPurpose                      epd:id_2023-S-210-661039_ProcedurePurpose_aE3iyMRsoF9Qvy4eFQRpLT;
-        epo:hasTitle                        "S21, PA 1.7; Bahntechnik Oberbau Los A , (19FEI37404) 20FEI44393"@de;
-        epo:isSubjectToProcedureSpecificTerm epd:id_2023-S-210-661039_ReviewTerm_7TwSLEC9PvaDEEAmGcz5G4
+  rdf:type                            epo:Procedure;
+  epo:foreseesContractSpecificTerm    epd:id_2023-S-210-661039_ContractTermProcedure_fqfw5hANKbaKT6uyGM9WEZ;
+  epo:hasID                           epd:id_2023-S-210-661039_ProcedureIdentifier_aE3iyMRsoF9Qvy4eFQRpLT;
+  epo:hasProcurementScopeDividedIntoLot epd:id_2023-S-210-661039_Lot_mtBaW8k5EC8G5zB7LwJPww;
+  epo:hasPurpose                      epd:id_2023-S-210-661039_ProcedurePurpose_aE3iyMRsoF9Qvy4eFQRpLT;
+  epo:hasTitle                        "S21, PA 1.7; Bahntechnik Oberbau Los A , (19FEI37404) 20FEI44393"@de;
+  epo:isSubjectToProcedureSpecificTerm epd:id_2023-S-210-661039_ReviewTerm_7TwSLEC9PvaDEEAmGcz5G4
 .
 
 epd:id_2023-S-210-661039_ProcedureIdentifier_aE3iyMRsoF9Qvy4eFQRpLT
-        rdf:type                epo:Identifier;
-        epo:hasIdentifierValue  "2019/S 039-088890" .
+  rdf:type                epo:Identifier;
+  epo:hasIdentifierValue  "2019/S 039-088890" .
 
 epd:id_2023-S-210-661039_ProcedurePurpose_aE3iyMRsoF9Qvy4eFQRpLT
-        rdf:type                    epo:Purpose;
-        epo:hasMainClassification   <http://data.europa.eu/cpv/cpv/45236000> .
+  rdf:type                    epo:Purpose;
+  epo:hasMainClassification   <http://data.europa.eu/cpv/cpv/45236000> .
 ```
 
 ---
@@ -478,21 +480,21 @@ Entity data:
 
 ```javascript
 epd:id_2023-S-211-665742_Procedure_faF7Q5dyoGpXu3Ru4RGg73
-        rdf:type                            epo:Procedure;
-        epo:hasDescription                  "Prestação de cuidados de enfermagem, para o serviço de nefrologia e transplantação renal - Unidade de hemodialise, do Centro Hospitalar Universitário Lisboa Norte, Epe."@pt;
-        epo:hasLegalBasis                   <http://publications.europa.eu/resource/authority/legal-basis/32014L0024>;
-        epo:hasProcedureType                <http://publications.europa.eu/resource/authority/procurement-procedure-type/neg-wo-call>;
-        epo:hasProcurementScopeDividedIntoLot epd:id_2023-S-211-665742_Lot_DgNm7RuiSQ47VBTvdrHsRv;
-        epo:hasPurpose                      epd:id_2023-S-211-665742_ProcedurePurpose_faF7Q5dyoGpXu3Ru4RGg73;
-        epo:hasTitle                        "Procedimento n.º 239X000323"@pt;
-        epo:isCoveredByGPA                  false;
-        epo:isSubjectToProcedureSpecificTerm epd:id_2023-S-211-665742_DirectAwardTerm_C5nS5y4XErvUqzRNMARW8r
+  rdf:type                            epo:Procedure;
+  epo:hasDescription                  "Prestação de cuidados de enfermagem, para o serviço de nefrologia e transplantação renal - Unidade de hemodialise, do Centro Hospitalar Universitário Lisboa Norte, Epe."@pt;
+  epo:hasLegalBasis                   <http://publications.europa.eu/resource/authority/legal-basis/32014L0024>;
+  epo:hasProcedureType                <http://publications.europa.eu/resource/authority/procurement-procedure-type/neg-wo-call>;
+  epo:hasProcurementScopeDividedIntoLot epd:id_2023-S-211-665742_Lot_DgNm7RuiSQ47VBTvdrHsRv;
+  epo:hasPurpose                      epd:id_2023-S-211-665742_ProcedurePurpose_faF7Q5dyoGpXu3Ru4RGg73;
+  epo:hasTitle                        "Procedimento n.º 239X000323"@pt;
+  epo:isCoveredByGPA                  false;
+  epo:isSubjectToProcedureSpecificTerm epd:id_2023-S-211-665742_DirectAwardTerm_C5nS5y4XErvUqzRNMARW8r
 .
 
 epd:id_2023-S-211-665742_ProcedurePurpose_faF7Q5dyoGpXu3Ru4RGg73
-        rdf:type                    epo:Purpose;
-        epo:hasContractNatureType   <http://publications.europa.eu/resource/authority/contract-nature/services>;
-        epo:hasMainClassification   <http://data.europa.eu/cpv/cpv/85141200> .
+  rdf:type                    epo:Purpose;
+  epo:hasContractNatureType   <http://publications.europa.eu/resource/authority/contract-nature/services>;
+  epo:hasMainClassification   <http://data.europa.eu/cpv/cpv/85141200> .
 ```
 
 **Resolution**:
