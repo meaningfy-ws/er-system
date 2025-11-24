@@ -27,12 +27,12 @@
         },
         "type": {
           "description": "A string representing the entity type URI (based on CET).\n\nNote that we don't use the `designates_type` thing here, since entities or canonical entities \nare always used in clearly distinct contexts.\n",
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         }
       },
+      "required": [
+        "type"
+      ],
       "title": "CanonicalEntity",
       "type": "object"
     },
@@ -56,19 +56,17 @@
         },
         "id": {
           "description": "A string containing the entity ID or URI (set by the ERS or, for canonical entities, by the ERE).\n",
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         },
         "type": {
           "description": "A string representing the entity type URI (based on CET).\n\nNote that we don't use the `designates_type` thing here, since entities or canonical entities \nare always used in clearly distinct contexts.\n",
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         }
       },
+      "required": [
+        "id",
+        "type"
+      ],
       "title": "Entity",
       "type": "object"
     },
@@ -77,14 +75,7 @@
       "description": "An entity resolution response sent by the ERE.\n\nThis contains a reference to the canonical entity that the ERE has associated to the original \nentity in the request. It also reports a confidence score for the established association.",
       "properties": {
         "canonicalEntity": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/CanonicalEntity"
-            },
-            {
-              "type": "null"
-            }
-          ],
+          "$ref": "#/$defs/CanonicalEntity",
           "description": "The canonical entity that the ERE has associated to the original entity.\nTODO: the canonical entity URI is available from the this attribute, should we\nhave it at the parent level too?\n"
         },
         "confidenceLevel": {
@@ -103,22 +94,21 @@
         },
         "requestId": {
           "description": "A string representing the unique ID of the request this response is about.\n",
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         },
         "type": {
           "description": "The type of the request or result.\n\nAs per LinkML specification, `designates_type` is used here in order to allow for this\nslot to tell the concrete subclass that an instance (such as a JSON object) belongs to.\n\nIn other words, a particular request will have `type` set with values like \n`EntityResolutionRequest` or `EntityResolutionResult`\n",
           "enum": [
             "EntityResolution"
           ],
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         }
       },
+      "required": [
+        "canonicalEntity",
+        "requestId",
+        "type"
+      ],
       "title": "EntityResolution",
       "type": "object"
     },
@@ -127,14 +117,7 @@
       "description": "An entity resolution request sent to the ERE, containing the entity to be resolved.",
       "properties": {
         "entity": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/Entity"
-            },
-            {
-              "type": "null"
-            }
-          ],
+          "$ref": "#/$defs/Entity",
           "description": "The data about the entity to be resolved.\n"
         },
         "metadata": {
@@ -146,29 +129,26 @@
         },
         "originator": {
           "description": "The ID or URI of the request originator.\n",
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         },
         "requestId": {
           "description": "A string representing the unique ID of this request.\n",
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         },
         "type": {
           "description": "The type of the request or result.\n\nAs per LinkML specification, `designates_type` is used here in order to allow for this\nslot to tell the concrete subclass that an instance (such as a JSON object) belongs to.\n\nIn other words, a particular request will have `type` set with values like \n`EntityResolutionRequest` or `EntityResolutionResult`\n",
           "enum": [
             "EntityResolutionRequest"
           ],
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         }
       },
+      "required": [
+        "entity",
+        "requestId",
+        "originator",
+        "type"
+      ],
       "title": "EntityResolutionRequest",
       "type": "object"
     },
@@ -185,29 +165,25 @@
         },
         "originator": {
           "description": "The ID or URI of the request originator.\n",
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         },
         "requestId": {
           "description": "A string representing the unique ID of this request.\n",
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         },
         "type": {
           "description": "The type of the request or result.\n\nAs per LinkML specification, `designates_type` is used here in order to allow for this\nslot to tell the concrete subclass that an instance (such as a JSON object) belongs to.\n\nIn other words, a particular request will have `type` set with values like \n`EntityResolutionRequest` or `EntityResolutionResult`\n",
           "enum": [
             "RebuildRequest"
           ],
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         }
       },
+      "required": [
+        "requestId",
+        "originator",
+        "type"
+      ],
       "title": "RebuildRequest",
       "type": "object"
     },
@@ -224,22 +200,20 @@
         },
         "requestId": {
           "description": "A string representing the unique ID of the request this response is about.\n",
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         },
         "type": {
           "description": "The type of the request or result.\n\nAs per LinkML specification, `designates_type` is used here in order to allow for this\nslot to tell the concrete subclass that an instance (such as a JSON object) belongs to.\n\nIn other words, a particular request will have `type` set with values like \n`EntityResolutionRequest` or `EntityResolutionResult`\n",
           "enum": [
             "RebuildResponse"
           ],
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": "string"
         }
       },
+      "required": [
+        "requestId",
+        "type"
+      ],
       "title": "RebuildResponse",
       "type": "object"
     }

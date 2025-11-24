@@ -39,6 +39,8 @@ Alias: canonicalEntity
 
 * Range: [CanonicalEntity](CanonicalEntity.md)
 
+* Required: True
+
 
 
 
@@ -86,6 +88,7 @@ owner: EntityResolution
 domain_of:
 - EntityResolution
 range: CanonicalEntity
+required: true
 
 ```
 </details>

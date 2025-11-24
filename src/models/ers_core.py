@@ -121,9 +121,9 @@ class Request(RequestOrResponseMixin):
          'from_schema': 'https://data.europa.eu/ers/schema',
          'mixins': ['RequestOrResponseMixin']})
 
-    requestId: Optional[str] = Field(default=None, description="""A string representing the unique ID of this request.
+    requestId: str = Field(default=..., description="""A string representing the unique ID of this request.
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['Request', 'Response']} })
-    originator: Optional[str] = Field(default=None, description="""The ID or URI of the request originator.
+    originator: str = Field(default=..., description="""The ID or URI of the request originator.
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['Request']} })
     type: Literal["Request"] = Field(default="Request", description="""The type of the request or result.
 
@@ -146,7 +146,7 @@ class Response(RequestOrResponseMixin):
          'from_schema': 'https://data.europa.eu/ers/schema',
          'mixins': ['RequestOrResponseMixin']})
 
-    requestId: Optional[str] = Field(default=None, description="""A string representing the unique ID of the request this response is about.
+    requestId: str = Field(default=..., description="""A string representing the unique ID of the request this response is about.
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['Request', 'Response']} })
     type: Literal["Response"] = Field(default="Response", description="""The type of the request or result.
 
@@ -185,11 +185,11 @@ class EntityResolutionRequest(Request):
                                 '}\n'}],
          'from_schema': 'https://data.europa.eu/ers/schema'})
 
-    entity: Optional[Entity] = Field(default=None, description="""The data about the entity to be resolved.
+    entity: Entity = Field(default=..., description="""The data about the entity to be resolved.
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['EntityResolutionRequest']} })
-    requestId: Optional[str] = Field(default=None, description="""A string representing the unique ID of this request.
+    requestId: str = Field(default=..., description="""A string representing the unique ID of this request.
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['Request', 'Response']} })
-    originator: Optional[str] = Field(default=None, description="""The ID or URI of the request originator.
+    originator: str = Field(default=..., description="""The ID or URI of the request originator.
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['Request']} })
     type: Literal["EntityResolutionRequest"] = Field(default="EntityResolutionRequest", description="""The type of the request or result.
 
@@ -229,14 +229,14 @@ class EntityResolution(Response):
                                 '}\n'}],
          'from_schema': 'https://data.europa.eu/ers/schema'})
 
-    canonicalEntity: Optional[CanonicalEntity] = Field(default=None, description="""The canonical entity that the ERE has associated to the original entity.
+    canonicalEntity: CanonicalEntity = Field(default=..., description="""The canonical entity that the ERE has associated to the original entity.
 TODO: the canonical entity URI is available from the this attribute, should we
 have it at the parent level too?
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['EntityResolution']} })
     confidenceLevel: Optional[float] = Field(default=None, description="""A 0-1 value of how confident the ERE is about associating the original entity
 with the canonical entity's cluster.
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['EntityResolution']} })
-    requestId: Optional[str] = Field(default=None, description="""A string representing the unique ID of the request this response is about.
+    requestId: str = Field(default=..., description="""A string representing the unique ID of the request this response is about.
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['Request', 'Response']} })
     type: Literal["EntityResolution"] = Field(default="EntityResolution", description="""The type of the request or result.
 
@@ -259,9 +259,9 @@ class Entity(ConfiguredBaseModel):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://data.europa.eu/ers/schema'})
 
-    id: Optional[str] = Field(default=None, description="""A string containing the entity ID or URI (set by the ERS or, for canonical entities, by the ERE).
+    id: str = Field(default=..., description="""A string containing the entity ID or URI (set by the ERS or, for canonical entities, by the ERE).
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'CanonicalEntity']} })
-    type: Optional[str] = Field(default=None, description="""A string representing the entity type URI (based on CET).
+    type: str = Field(default=..., description="""A string representing the entity type URI (based on CET).
 
 Note that we don't use the `designates_type` thing here, since entities or canonical entities 
 are always used in clearly distinct contexts.
@@ -284,7 +284,7 @@ class CanonicalEntity(Entity):
 
     id: Optional[str] = Field(default=None, description="""The (canonical) URI of the canonical entity. This restricts the parent range to URIs only.
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'CanonicalEntity']} })
-    type: Optional[str] = Field(default=None, description="""A string representing the entity type URI (based on CET).
+    type: str = Field(default=..., description="""A string representing the entity type URI (based on CET).
 
 Note that we don't use the `designates_type` thing here, since entities or canonical entities 
 are always used in clearly distinct contexts.
@@ -308,9 +308,9 @@ class RebuildRequest(Request):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://data.europa.eu/ers/schema'})
 
-    requestId: Optional[str] = Field(default=None, description="""A string representing the unique ID of this request.
+    requestId: str = Field(default=..., description="""A string representing the unique ID of this request.
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['Request', 'Response']} })
-    originator: Optional[str] = Field(default=None, description="""The ID or URI of the request originator.
+    originator: str = Field(default=..., description="""The ID or URI of the request originator.
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['Request']} })
     type: Literal["RebuildRequest"] = Field(default="RebuildRequest", description="""The type of the request or result.
 
@@ -333,7 +333,7 @@ class RebuildResponse(Response):
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://data.europa.eu/ers/schema'})
 
-    requestId: Optional[str] = Field(default=None, description="""A string representing the unique ID of the request this response is about.
+    requestId: str = Field(default=..., description="""A string representing the unique ID of the request this response is about.
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['Request', 'Response']} })
     type: Literal["RebuildResponse"] = Field(default="RebuildResponse", description="""The type of the request or result.
 

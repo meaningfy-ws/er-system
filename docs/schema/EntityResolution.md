@@ -36,7 +36,7 @@ URI: [ers:EntityResolution](https://data.europa.eu/ers/schema/EntityResolution)
     
         
         
-        EntityResolution --> "0..1" CanonicalEntity : canonicalEntity
+        EntityResolution --> "1" CanonicalEntity : canonicalEntity
         click CanonicalEntity href "../CanonicalEntity/"
     
 
@@ -66,10 +66,10 @@ URI: [ers:EntityResolution](https://data.europa.eu/ers/schema/EntityResolution)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [canonicalEntity](canonicalEntity.md) | 0..1 <br/> [CanonicalEntity](CanonicalEntity.md) | The canonical entity that the ERE has associated to the original entity | direct |
+| [canonicalEntity](canonicalEntity.md) | 1 <br/> [CanonicalEntity](CanonicalEntity.md) | The canonical entity that the ERE has associated to the original entity | direct |
 | [confidenceLevel](confidenceLevel.md) | 0..1 <br/> [Float](Float.md) | A 0-1 value of how confident the ERE is about associating the original entity | direct |
-| [requestId](requestId.md) | 0..1 <br/> [String](String.md) | A string representing the unique ID of the request this response is about | [Response](Response.md) |
-| [type](type.md) | 0..1 <br/> [String](String.md) | The type of the request or result | [RequestOrResponseMixin](RequestOrResponseMixin.md) |
+| [requestId](requestId.md) | 1 <br/> [String](String.md) | A string representing the unique ID of the request this response is about | [Response](Response.md) |
+| [type](type.md) | 1 <br/> [String](String.md) | The type of the request or result | [RequestOrResponseMixin](RequestOrResponseMixin.md) |
 | [metadata](metadata.md) | 0..1 <br/> [String](String.md) | An optional arbitrary dictionary of further request metadata | [RequestOrResponseMixin](RequestOrResponseMixin.md) |
 
 
@@ -166,6 +166,7 @@ attributes:
     domain_of:
     - EntityResolution
     range: CanonicalEntity
+    required: true
   confidenceLevel:
     name: confidenceLevel
     description: 'A 0-1 value of how confident the ERE is about associating the original
@@ -219,6 +220,7 @@ attributes:
     domain_of:
     - EntityResolution
     range: CanonicalEntity
+    required: true
   confidenceLevel:
     name: confidenceLevel
     description: 'A 0-1 value of how confident the ERE is about associating the original
@@ -247,6 +249,7 @@ attributes:
     - Request
     - Response
     range: string
+    required: true
   type:
     name: type
     description: "The type of the request or result.\n\nAs per LinkML specification,\
@@ -263,6 +266,7 @@ attributes:
     - RequestOrResponseMixin
     - Entity
     range: string
+    required: true
   metadata:
     name: metadata
     description: 'An optional arbitrary dictionary of further request metadata.

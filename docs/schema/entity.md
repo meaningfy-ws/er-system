@@ -35,6 +35,8 @@ Alias: entity
 
 * Range: [Entity](Entity.md)
 
+* Required: True
+
 
 
 
@@ -78,6 +80,7 @@ owner: EntityResolutionRequest
 domain_of:
 - EntityResolutionRequest
 range: Entity
+required: true
 
 ```
 </details>

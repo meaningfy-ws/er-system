@@ -59,9 +59,9 @@ URI: [ers:Request](https://data.europa.eu/ers/schema/Request)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [requestId](requestId.md) | 0..1 <br/> [String](String.md) | A string representing the unique ID of this request | direct |
-| [originator](originator.md) | 0..1 <br/> [String](String.md) | The ID or URI of the request originator | direct |
-| [type](type.md) | 0..1 <br/> [String](String.md) | The type of the request or result | [RequestOrResponseMixin](RequestOrResponseMixin.md) |
+| [requestId](requestId.md) | 1 <br/> [String](String.md) | A string representing the unique ID of this request | direct |
+| [originator](originator.md) | 1 <br/> [String](String.md) | The ID or URI of the request originator | direct |
+| [type](type.md) | 1 <br/> [String](String.md) | The type of the request or result | [RequestOrResponseMixin](RequestOrResponseMixin.md) |
 | [metadata](metadata.md) | 0..1 <br/> [String](String.md) | An optional arbitrary dictionary of further request metadata | [RequestOrResponseMixin](RequestOrResponseMixin.md) |
 
 
@@ -127,6 +127,7 @@ attributes:
     domain_of:
     - Request
     - Response
+    required: true
   originator:
     name: originator
     description: 'The ID or URI of the request originator.
@@ -136,6 +137,7 @@ attributes:
     rank: 1000
     domain_of:
     - Request
+    required: true
 
 ```
 </details>
@@ -166,6 +168,7 @@ attributes:
     - Request
     - Response
     range: string
+    required: true
   originator:
     name: originator
     description: 'The ID or URI of the request originator.
@@ -178,6 +181,7 @@ attributes:
     domain_of:
     - Request
     range: string
+    required: true
   type:
     name: type
     description: "The type of the request or result.\n\nAs per LinkML specification,\
@@ -194,6 +198,7 @@ attributes:
     - RequestOrResponseMixin
     - Entity
     range: string
+    required: true
   metadata:
     name: metadata
     description: 'An optional arbitrary dictionary of further request metadata.

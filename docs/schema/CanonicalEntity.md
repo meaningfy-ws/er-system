@@ -56,7 +56,7 @@ URI: [ers:CanonicalEntity](https://data.europa.eu/ers/schema/CanonicalEntity)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [id](id.md) | 0..1 <br/> [Uri](Uri.md) | The (canonical) URI of the canonical entity | direct |
-| [type](type.md) | 0..1 <br/> [String](String.md) | A string representing the entity type URI (based on CET) | [Entity](Entity.md) |
+| [type](type.md) | 1 <br/> [String](String.md) | A string representing the entity type URI (based on CET) | [Entity](Entity.md) |
 | [entityDataFormat](entityDataFormat.md) | 0..1 <br/> [String](String.md) | A string about the MIME format of `entityData` (e | [Entity](Entity.md) |
 | [entityData](entityData.md) | 0..1 <br/> [String](String.md) | A code string representing the entity details (eg, RDF description) | [Entity](Entity.md) |
 
@@ -181,6 +181,7 @@ attributes:
     - RequestOrResponseMixin
     - Entity
     range: string
+    required: true
   entityDataFormat:
     name: entityDataFormat
     description: 'A string about the MIME format of `entityData` (e.g. text/turtle,

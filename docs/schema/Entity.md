@@ -53,8 +53,8 @@ URI: [ers:Entity](https://data.europa.eu/ers/schema/Entity)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 0..1 <br/> [String](String.md) | A string containing the entity ID or URI (set by the ERS or, for canonical en... | direct |
-| [type](type.md) | 0..1 <br/> [String](String.md) | A string representing the entity type URI (based on CET) | direct |
+| [id](id.md) | 1 <br/> [String](String.md) | A string containing the entity ID or URI (set by the ERS or, for canonical en... | direct |
+| [type](type.md) | 1 <br/> [String](String.md) | A string representing the entity type URI (based on CET) | direct |
 | [entityDataFormat](entityDataFormat.md) | 0..1 <br/> [String](String.md) | A string about the MIME format of `entityData` (e | direct |
 | [entityData](entityData.md) | 0..1 <br/> [String](String.md) | A code string representing the entity details (eg, RDF description) | direct |
 
@@ -132,6 +132,7 @@ attributes:
     - Entity
     - CanonicalEntity
     range: string
+    required: true
   type:
     name: type
     description: "A string representing the entity type URI (based on CET).\n\nNote\
@@ -141,6 +142,7 @@ attributes:
     domain_of:
     - RequestOrResponseMixin
     - Entity
+    required: true
   entityDataFormat:
     name: entityDataFormat
     description: 'A string about the MIME format of `entityData` (e.g. text/turtle,
@@ -193,6 +195,7 @@ attributes:
     - Entity
     - CanonicalEntity
     range: string
+    required: true
   type:
     name: type
     description: "A string representing the entity type URI (based on CET).\n\nNote\
@@ -205,6 +208,7 @@ attributes:
     - RequestOrResponseMixin
     - Entity
     range: string
+    required: true
   entityDataFormat:
     name: entityDataFormat
     description: 'A string about the MIME format of `entityData` (e.g. text/turtle,

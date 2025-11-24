@@ -45,7 +45,7 @@ URI: [ers:RequestOrResponseMixin](https://data.europa.eu/ers/schema/RequestOrRes
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [type](type.md) | 0..1 <br/> [String](String.md) | The type of the request or result | direct |
+| [type](type.md) | 1 <br/> [String](String.md) | The type of the request or result | direct |
 | [metadata](metadata.md) | 0..1 <br/> [String](String.md) | An optional arbitrary dictionary of further request metadata | direct |
 
 
@@ -121,6 +121,7 @@ attributes:
     domain_of:
     - RequestOrResponseMixin
     - Entity
+    required: true
   metadata:
     name: metadata
     description: 'An optional arbitrary dictionary of further request metadata.
@@ -162,6 +163,7 @@ attributes:
     - RequestOrResponseMixin
     - Entity
     range: string
+    required: true
   metadata:
     name: metadata
     description: 'An optional arbitrary dictionary of further request metadata.

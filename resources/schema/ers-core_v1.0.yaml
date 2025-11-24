@@ -28,6 +28,7 @@ classes:
           In other words, a particular request will have `type` set with values like 
           `EntityResolutionRequest` or `EntityResolutionResult`
         designates_type: true
+        required: true
       metadata:
         description: |
           An optional arbitrary dictionary of further request metadata.
@@ -46,9 +47,11 @@ classes:
       requestId:
         description: |
           A string representing the unique ID of this request.
+        required: true
       originator:
         description: |
           The ID or URI of the request originator.
+        required: true
 
 
 
@@ -64,6 +67,7 @@ classes:
       requestId:
         description: |
           A string representing the unique ID of the request this response is about.
+        required: true
 
 
 
@@ -76,6 +80,7 @@ classes:
         range: Entity
         description: |
           The data about the entity to be resolved.
+        required: true
     examples:
       - value: |
           {
@@ -111,6 +116,7 @@ classes:
           The canonical entity that the ERE has associated to the original entity.
           TODO: the canonical entity URI is available from the this attribute, should we
           have it at the parent level too?
+        required: true
       confidenceLevel:
         range: float
         description: |
@@ -145,12 +151,14 @@ classes:
         range: string
         description: |
           A string containing the entity ID or URI (set by the ERS or, for canonical entities, by the ERE).
+        required: true
       type:
         description: |
           A string representing the entity type URI (based on CET).
 
           Note that we don't use the `designates_type` thing here, since entities or canonical entities 
           are always used in clearly distinct contexts.
+        required: true
       entityDataFormat:
         description: |
           A string about the MIME format of `entityData` (e.g. text/turtle, application/ld+json)
