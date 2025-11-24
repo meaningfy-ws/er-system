@@ -16,6 +16,7 @@ LINKML_MODEL_DIR=resources/schema
 LINKML_MODEL=$(LINKML_MODEL_DIR)/$(LINKML_MODEL_NAME)_v$(LINKML_MODEL_VERSION).yaml
 PYTHON_MODEL_DIR=src/models
 CORE_MODEL=$(PYTHON_MODEL_DIR)/$(PYTHON_MODEL_NAME).py
+JSON_SCHEMA_MODEL=$(LINKML_MODEL_DIR)/$(PYTHON_MODEL_NAME).json
 DOCS_DIR=docs
 MODEL_DOCS_DIR=$(DOCS_DIR)/schema
 
@@ -39,6 +40,7 @@ check-uv:
 # CI should also generate the docs if a change is found in models
 generate_models: $(LINKML_MODEL_DIR) $(PYTHON_MODEL_DIR)
 	@ gen-pydantic $(LINKML_MODEL) > $(CORE_MODEL)
+	@ gen-json-schema --indent 2 $(LINKML_MODEL) > $(JSON_SCHEMA_MODEL)
 
 generate_markdown_docs: $(MODEL_DOCS_DIR)  
 	@ gen-doc $(LINKML_MODEL) -d $(MODEL_DOCS_DIR)
