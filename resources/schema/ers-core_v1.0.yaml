@@ -35,6 +35,8 @@ classes:
         # TODO: I can't make Any to work, see https://github.com/linkml/linkml/issues/2992
         # range: Any
 
+        # TODO: are we fine with it supporting JSON only, or should it be a string/blob, and 
+        # make room for any of JSON, XML, RDF, etc, like entityData?
 
 
   Request:
@@ -62,7 +64,7 @@ classes:
     mixins:
       - RequestOrResponseMixin
     attributes:
-      # TODO: do we need responseId?
+      # We decided we don't need a responseId for the moment
       # TODO: Do we need metadata? (Not mentioned in the original spec)
       requestId:
         description: |
@@ -114,8 +116,11 @@ classes:
         range: CanonicalEntity
         description: |
           The canonical entity that the ERE has associated to the original entity.
-          TODO: the canonical entity URI is available from the this attribute, should we
-          have it at the parent level too?
+          This includes the canonical entity URI and its type.
+        required: true
+      sourceEntityId:
+        description: |
+          The ID or URI of the original entity that has been resolved.
         required: true
       confidenceLevel:
         range: float
@@ -147,7 +152,9 @@ classes:
       the entity, such as its type and the data format used to represent it.
     attributes:
       id:
-        # TODO: Can't make it more precise, see https://github.com/linkml/linkml/issues/2992
+        # TODO: Can't make it more precise, it should be string or URI, 
+        # see https://github.com/linkml/linkml/issues/2992
+        # It applies to sourceEntityId in EntityResolution too
         range: string
         description: |
           A string containing the entity ID or URI (set by the ERS or, for canonical entities, by the ERE).
