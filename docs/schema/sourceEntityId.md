@@ -1,11 +1,9 @@
 
 
-# Slot: canonicalEntity 
+# Slot: sourceEntityId 
 
 
-_The canonical entity that the ERE has associated to the original entity._
-
-_This includes the canonical entity URI and its type._
+_The ID or URI of the original entity that has been resolved._
 
 __
 
@@ -13,8 +11,8 @@ __
 
 
 
-URI: [ers:canonicalEntity](https://data.europa.eu/ers/schema/canonicalEntity)
-Alias: canonicalEntity
+URI: [ers:sourceEntityId](https://data.europa.eu/ers/schema/sourceEntityId)
+Alias: sourceEntityId
 
 <!-- no inheritance hierarchy -->
 
@@ -35,7 +33,7 @@ Alias: canonicalEntity
 
 ## Properties
 
-* Range: [CanonicalEntity](CanonicalEntity.md)
+* Range: [String](String.md)
 
 * Required: True
 
@@ -61,8 +59,8 @@ Alias: canonicalEntity
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ers:canonicalEntity |
-| native | ers:canonicalEntity |
+| self | ers:sourceEntityId |
+| native | ers:sourceEntityId |
 
 
 
@@ -71,19 +69,17 @@ Alias: canonicalEntity
 
 <details>
 ```yaml
-name: canonicalEntity
-description: 'The canonical entity that the ERE has associated to the original entity.
-
-  This includes the canonical entity URI and its type.
+name: sourceEntityId
+description: 'The ID or URI of the original entity that has been resolved.
 
   '
 from_schema: https://data.europa.eu/ers/schema
 rank: 1000
-alias: canonicalEntity
+alias: sourceEntityId
 owner: EntityResolution
 domain_of:
 - EntityResolution
-range: CanonicalEntity
+range: string
 required: true
 
 ```

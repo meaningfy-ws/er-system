@@ -37,6 +37,7 @@ Name: ersServiceDataSchema
 | [metadata](metadata.md) | An optional arbitrary dictionary of further request metadata |
 | [originator](originator.md) | The ID or URI of the request originator |
 | [requestId](requestId.md) | A string representing the unique ID of this request |
+| [sourceEntityId](sourceEntityId.md) | The ID or URI of the original entity that has been resolved |
 | [type](type.md) | The type of the request or result |
 
 

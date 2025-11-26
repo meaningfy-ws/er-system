@@ -47,6 +47,8 @@ URI: [ers:EntityResolution](https://data.europa.eu/ers/schema/EntityResolution)
         
       EntityResolution : requestId
         
+      EntityResolution : sourceEntityId
+        
       EntityResolution : type
         
       
@@ -67,6 +69,7 @@ URI: [ers:EntityResolution](https://data.europa.eu/ers/schema/EntityResolution)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [canonicalEntity](canonicalEntity.md) | 1 <br/> [CanonicalEntity](CanonicalEntity.md) | The canonical entity that the ERE has associated to the original entity | direct |
+| [sourceEntityId](sourceEntityId.md) | 1 <br/> [String](String.md) | The ID or URI of the original entity that has been resolved | direct |
 | [confidenceLevel](confidenceLevel.md) | 0..1 <br/> [Float](Float.md) | A 0-1 value of how confident the ERE is about associating the original entity | direct |
 | [requestId](requestId.md) | 1 <br/> [String](String.md) | A string representing the unique ID of the request this response is about | [Response](Response.md) |
 | [type](type.md) | 1 <br/> [String](String.md) | The type of the request or result | [RequestOrResponseMixin](RequestOrResponseMixin.md) |
@@ -155,10 +158,7 @@ attributes:
     description: 'The canonical entity that the ERE has associated to the original
       entity.
 
-      TODO: the canonical entity URI is available from the this attribute, should
-      we
-
-      have it at the parent level too?
+      This includes the canonical entity URI and its type.
 
       '
     from_schema: https://data.europa.eu/ers/schema
@@ -166,6 +166,16 @@ attributes:
     domain_of:
     - EntityResolution
     range: CanonicalEntity
+    required: true
+  sourceEntityId:
+    name: sourceEntityId
+    description: 'The ID or URI of the original entity that has been resolved.
+
+      '
+    from_schema: https://data.europa.eu/ers/schema
+    rank: 1000
+    domain_of:
+    - EntityResolution
     required: true
   confidenceLevel:
     name: confidenceLevel
@@ -207,10 +217,7 @@ attributes:
     description: 'The canonical entity that the ERE has associated to the original
       entity.
 
-      TODO: the canonical entity URI is available from the this attribute, should
-      we
-
-      have it at the parent level too?
+      This includes the canonical entity URI and its type.
 
       '
     from_schema: https://data.europa.eu/ers/schema
@@ -220,6 +227,19 @@ attributes:
     domain_of:
     - EntityResolution
     range: CanonicalEntity
+    required: true
+  sourceEntityId:
+    name: sourceEntityId
+    description: 'The ID or URI of the original entity that has been resolved.
+
+      '
+    from_schema: https://data.europa.eu/ers/schema
+    rank: 1000
+    alias: sourceEntityId
+    owner: EntityResolution
+    domain_of:
+    - EntityResolution
+    range: string
     required: true
   confidenceLevel:
     name: confidenceLevel

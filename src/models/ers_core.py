@@ -230,8 +230,9 @@ class EntityResolution(Response):
          'from_schema': 'https://data.europa.eu/ers/schema'})
 
     canonicalEntity: CanonicalEntity = Field(default=..., description="""The canonical entity that the ERE has associated to the original entity.
-TODO: the canonical entity URI is available from the this attribute, should we
-have it at the parent level too?
+This includes the canonical entity URI and its type.
+""", json_schema_extra = { "linkml_meta": {'domain_of': ['EntityResolution']} })
+    sourceEntityId: str = Field(default=..., description="""The ID or URI of the original entity that has been resolved.
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['EntityResolution']} })
     confidenceLevel: Optional[float] = Field(default=None, description="""A 0-1 value of how confident the ERE is about associating the original entity
 with the canonical entity's cluster.
