@@ -1,54 +1,34 @@
 Feature: ERE/ERS interaction upon rebuild requests
-  When a rebuild request is pushed to the ERE, the ERE resets its internal state, so that all
-	subsequent entity resolution requests are processed as though the corresponding entities have
-	never been seen before, ie, new canonical entities and cluster associations are (re) created
-	as old entities are sent in again for resolution, as well as for completely new entities.
+  The ERE correctly processes a rebuild request, asynchronously replies with an acknowledgement
+	response to it, and it keeps processing resolution requests as usual after the a rebuild.
 
-Scenario
-  A rebuild request is pushed to the ERE. The ERE asynchronously replies with a response that
+Scenario:
+  Upon a rebuild request pushed to the ERE, this asynchronously replies with a response that
 	indicates the request has been received and the internal state has been reset. 
 When 
 	The ERS pushes a rebuild request into the requests channel
-Then
+Then 
 	The ERE asynchronously pushes a rebuild response to the rebuild responses channel that contains:
 
   requestId: the ID of the rebuild request
-  type: "RebuildResponse" # JSON object type, matches the LinkML class in the service schema 
+  type: "RebuildResponse" # JSON object property, matches the LinkML class in the service schema 
 
-Scenario
-	After a rebuild request, an entity E that previously was resolved to a canonical entity C
-	is now resolved as a new entity
-Given
-	An entity C has previously been resolved by the ERE
+Scenario:
+	The ERE keeps resolving entities as usually after a rebuild request.
+
+	Note that, as in other tests, the exact meaning of "known/unknown entity" depends on the ERE implementation,
+  e.g., it has already seen the entity in a previous request, or it is a test ERE, with a pre-loaded 
+  set of canonical entities.
+Given 
+	a rebuild request was pushed to the ERE and the ERE has responded with a rebuild response
 When 
-	The ERS pushes a rebuild request into the ERE rebuild requests channel
-And
-	The ERE has responded with a rebuild response 
-And 
-	The ERS pushes a resolution request for the entity E into the requests channel
-Then
-	The ERE asynchronously pushes an entity resolution object to the responses channel that contains:
+	The ERS pushes a resolution request into the ERE requests channel for the entity E
+Then 
+	The ERE asynchronously pushes an entity resolution object to the responses channel that contains
+	either the E entity (if E was unknown) or a canonical entity C with a confidence score above the
+	configured threshold (if E is considered equivalent to a known entity C). Namely, a response like:
 	
 	sourceEntityId: the ID of the entity E
-	canonicalEntity: an RDF representation of E
-	confidenceLevel: 1.0 (since E itself is a new canonical entity)
+	canonicalEntity: an RDF representation of E or another entity C
+	confidenceLevel: 1.0 (if canonicalEntity is E) or a value above the min configured threshold
 	type: "EntityResolution" # JSON object type, matches the LinkML class in the service schema
-
-Scenario
-  After a rebuild request, a completely new entity E is resolved as a new canonical entity
-Given
-	The ERE has never received the entity E for resolution prior to the current use case,
-	not even before a rebuild operation
-When
-	The ERS pushes a rebuild request into the requests channel
-And
-	The ERE has responded with a rebuild response
-And
-	The ERS pushes a resolution request for the entity E into the requests channel
-Then
-	The ERE asynchronously pushes an entity resolution object to the responses channel that contains:
-	
-	sourceEntityId: the ID of the entity E
-	canonicalEntity: an RDF representation of E
-	confidenceLevel: 1.0 (since E itself is a new canonical entity)
-	type: "EntityResolution"
