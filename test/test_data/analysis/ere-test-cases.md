@@ -59,7 +59,7 @@ PREFIX time:  <http://www.w3.org/2006/time#>
 PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
 
 epd:id_2023-S-210-661238_ReviewerOrganisation_LLhJHMi9mby8ixbkfyGoWj
-  rdf:type                    org:Organization , epo:Procedure;
+  rdf:type                    org:Organization;
   epo:hasLegalName            "Комисия за защита на конкуренцията"@bg;
   epo:hasPrimaryContactPoint  epd:id_2023-S-210-661238_ReviewerContactPoint_LLhJHMi9mby8ixbkfyGoWj;
   cccev:registeredAddress     epd:id_2023-S-210-661238_ReviewerOrganisationAddress_LLhJHMi9mby8ixbkfyGoWj
@@ -108,7 +108,7 @@ This is the content for `entityData`:
 
 ```javascript
 epd:id_2023-S-210-662860_ReviewerOrganisation_LLhJHMi9mby8ixbkfyGoWj
-  rdf:type                    org:Organization , epo:Procedure;
+  rdf:type                    org:Organization;
   epo:hasLegalName            "Комисия за защита на конкуренцията"@bg;
   epo:hasPrimaryContactPoint  epd:id_2023-S-210-662860_ReviewerContactPoint_LLhJHMi9mby8ixbkfyGoWj;
   cccev:registeredAddress     epd:id_2023-S-210-662860_ReviewerOrganisationAddress_LLhJHMi9mby8ixbkfyGoWj
