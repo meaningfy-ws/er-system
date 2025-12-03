@@ -157,6 +157,62 @@
       "title": "EntityResolutionRequest",
       "type": "object"
     },
+    "ErrorResponse": {
+      "additionalProperties": false,
+      "description": "Response sent by the ERE when some error/exception occurs while processing a request.\nFor instance, this may happen if the request is malformed or some internal error happens.\n\nThe attributes of this class are based on [RFC-9457](https://datatracker.ietf.org/doc/html/rfc9457).",
+      "properties": {
+        "errorDetail": {
+          "description": "A human readable detailed message about the error that occurred.\n\nThis corresponds to RFC-9457's `detail`.\n",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "errorTitle": {
+          "description": "A human readable brief message about the error that occurred.\n\nThis corresponds to RFC-9457's `title`.\n",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "errorTrace": {
+          "description": "A string representing a (stack) trace of the error that occurred.\n\nThis is optional and typically used for debugging purposes only, since\nexposing this kind of server-side information is a security risk.\n",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "errorType": {
+          "description": "A string representing the error type, eg, the FQN of the raised exception.\n\nThis corresponds to RFC-9457's `type`.\n",
+          "type": "string"
+        },
+        "metadata": {
+          "description": "An optional arbitrary dictionary of further request metadata.\n",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "requestId": {
+          "description": "A string representing the unique ID of the request this response is about.\n",
+          "type": "string"
+        },
+        "type": {
+          "description": "The type of the request or result.\n\nAs per LinkML specification, `designates_type` is used here in order to allow for this\nslot to tell the concrete subclass that an instance (such as a JSON object) belongs to.\n\nIn other words, a particular request will have `type` set with values like \n`EntityResolutionRequest` or `EntityResolutionResult`\n",
+          "enum": [
+            "ErrorResponse"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "errorType",
+        "requestId",
+        "type"
+      ],
+      "title": "ErrorResponse",
+      "type": "object"
+    },
     "RebuildRequest": {
       "additionalProperties": false,
       "description": "A request to reset all the resolutions computed so far and rebuild them as \nrequests about old entities arrive again (and build new entities from scratch).\n\nIt is expected that the ERE client re-sends all the entities to be resolved again,\nusing `EntityResolutionRequest` messages exactly as the first time the resolutions \nwere built. This implies the a client like the ERS logs/persists the entities it receives\nto resolve and also saves manual overriding of ERE results.",

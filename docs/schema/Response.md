@@ -29,6 +29,8 @@ URI: [ers:Response](https://data.europa.eu/ers/schema/Response)
 
       Response <|-- EntityResolution
         click EntityResolution href "../EntityResolution/"
+      Response <|-- ErrorResponse
+        click ErrorResponse href "../ErrorResponse/"
       Response <|-- RebuildResponse
         click RebuildResponse href "../RebuildResponse/"
       
@@ -49,6 +51,7 @@ URI: [ers:Response](https://data.europa.eu/ers/schema/Response)
 ## Inheritance
 * **Response** [ [RequestOrResponseMixin](RequestOrResponseMixin.md)]
     * [EntityResolution](EntityResolution.md)
+    * [ErrorResponse](ErrorResponse.md)
     * [RebuildResponse](RebuildResponse.md)
 
 

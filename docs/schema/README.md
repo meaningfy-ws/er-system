@@ -20,6 +20,7 @@ Name: ersServiceDataSchema
 | [RequestOrResponseMixin](RequestOrResponseMixin.md) | Root mixin to represent attributes common to both requests and results |
 | [Response](Response.md) | Root class to represent all the responses sent by the ERE |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[EntityResolution](EntityResolution.md) | An entity resolution response sent by the ERE |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ErrorResponse](ErrorResponse.md) | Response sent by the ERE when some error/exception occurs while processing a ... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RebuildResponse](RebuildResponse.md) | A response to a `RebuildRequest`, confirming that the rebuild process has sta... |
 
 
@@ -33,6 +34,10 @@ Name: ersServiceDataSchema
 | [entity](entity.md) | The data about the entity to be resolved |
 | [entityData](entityData.md) | A code string representing the entity details (eg, RDF description) |
 | [entityDataFormat](entityDataFormat.md) | A string about the MIME format of `entityData` (e |
+| [errorDetail](errorDetail.md) | A human readable detailed message about the error that occurred |
+| [errorTitle](errorTitle.md) | A human readable brief message about the error that occurred |
+| [errorTrace](errorTrace.md) | A string representing a (stack) trace of the error that occurred |
+| [errorType](errorType.md) | A string representing the error type, eg, the FQN of the raised exception |
 | [id](id.md) | A string containing the entity ID or URI (set by the ERS or, for canonical en... |
 | [metadata](metadata.md) | An optional arbitrary dictionary of further request metadata |
 | [originator](originator.md) | The ID or URI of the request originator |

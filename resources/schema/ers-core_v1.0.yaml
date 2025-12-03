@@ -142,7 +142,47 @@ classes:
               "entityDataFormat": "text/turtle"
             }
           }
+  ErrorResponse:
+    is_a: Response
+    description: |
+      Response sent by the ERE when some error/exception occurs while processing a request.
+      For instance, this may happen if the request is malformed or some internal error happens.
 
+      The attributes of this class are based on [RFC-9457](https://datatracker.ietf.org/doc/html/rfc9457).
+    attributes:
+      errorType:
+        description: |
+          A string representing the error type, eg, the FQN of the raised exception.
+
+          This corresponds to RFC-9457's `type`.
+        required: true
+      errorTitle:
+        description: |
+          A human readable brief message about the error that occurred.
+
+          This corresponds to RFC-9457's `title`.
+      errorDetail:
+        description: |
+          A human readable detailed message about the error that occurred.
+
+          This corresponds to RFC-9457's `detail`.
+      
+      errorTrace:
+        description: |
+          A string representing a (stack) trace of the error that occurred.
+
+          This is optional and typically used for debugging purposes only, since
+          exposing this kind of server-side information is a security risk.
+    examples:
+      - value: |
+          {
+            "type": "ErrorResponse",
+            "requestId": "324fs3r345vx",
+            "errorType": "ere.exceptions.MalformedRequestError",
+            "errorTitle": "The entity data is missing in the request",
+            "errorDetail": "The 'entity' attribute is required in EntityResolutionRequest message"
+            "errorTrace": "Traceback (most recent call last):\n  File \"/app/ere/service.py\", line 45, in process_request\n..."
+          }
 
 
   Entity:
