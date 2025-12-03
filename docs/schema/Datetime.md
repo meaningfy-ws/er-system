@@ -31,7 +31,7 @@ URI: [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/examples/personinfo
+* from schema: https://data.europa.eu/ers/schema
 
 
 
@@ -41,7 +41,7 @@ URI: [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:dateTime |
-| native | https://w3id.org/linkml/examples/personinfo/datetime |
+| native | ers:datetime |
 | exact | schema:DateTime |
 
 
