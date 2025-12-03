@@ -180,7 +180,8 @@ classes:
             "requestId": "324fs3r345vx",
             "errorType": "ere.exceptions.MalformedRequestError",
             "errorTitle": "The entity data is missing in the request",
-            "errorDetail": "The 'entity' attribute is required in EntityResolutionRequest message"
+            "errorDetail": "The 'entity' attribute is required in EntityResolutionRequest message",
+            // Optional and not recommended for production use
             "errorTrace": "Traceback (most recent call last):\n  File \"/app/ere/service.py\", line 45, in process_request\n..."
           }
 
