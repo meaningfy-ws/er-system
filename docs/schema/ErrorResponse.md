@@ -88,7 +88,8 @@ URI: [ers:ErrorResponse](https://data.europa.eu/ers/schema/ErrorResponse)
   "requestId": "324fs3r345vx",
   "errorType": "ere.exceptions.MalformedRequestError",
   "errorTitle": "The entity data is missing in the request",
-  "errorDetail": "The 'entity' attribute is required in EntityResolutionRequest message"
+  "errorDetail": "The 'entity' attribute is required in EntityResolutionRequest message",
+  // Optional and not recommended for production use
   "errorTrace": "Traceback (most recent call last):\n  File \"/app/ere/service.py\", line 45, in process_request\n..."
 }
  |
@@ -143,9 +144,10 @@ examples:
 - value: "{\n  \"type\": \"ErrorResponse\",\n  \"requestId\": \"324fs3r345vx\",\n\
     \  \"errorType\": \"ere.exceptions.MalformedRequestError\",\n  \"errorTitle\"\
     : \"The entity data is missing in the request\",\n  \"errorDetail\": \"The 'entity'\
-    \ attribute is required in EntityResolutionRequest message\"\n  \"errorTrace\"\
-    : \"Traceback (most recent call last):\\n  File \\\"/app/ere/service.py\\\", line\
-    \ 45, in process_request\\n...\"\n}\n"
+    \ attribute is required in EntityResolutionRequest message\",\n  // Optional and\
+    \ not recommended for production use\n  \"errorTrace\": \"Traceback (most recent\
+    \ call last):\\n  File \\\"/app/ere/service.py\\\", line 45, in process_request\\\
+    n...\"\n}\n"
 from_schema: https://data.europa.eu/ers/schema
 is_a: Response
 attributes:
@@ -224,9 +226,10 @@ examples:
 - value: "{\n  \"type\": \"ErrorResponse\",\n  \"requestId\": \"324fs3r345vx\",\n\
     \  \"errorType\": \"ere.exceptions.MalformedRequestError\",\n  \"errorTitle\"\
     : \"The entity data is missing in the request\",\n  \"errorDetail\": \"The 'entity'\
-    \ attribute is required in EntityResolutionRequest message\"\n  \"errorTrace\"\
-    : \"Traceback (most recent call last):\\n  File \\\"/app/ere/service.py\\\", line\
-    \ 45, in process_request\\n...\"\n}\n"
+    \ attribute is required in EntityResolutionRequest message\",\n  // Optional and\
+    \ not recommended for production use\n  \"errorTrace\": \"Traceback (most recent\
+    \ call last):\\n  File \\\"/app/ere/service.py\\\", line 45, in process_request\\\
+    n...\"\n}\n"
 from_schema: https://data.europa.eu/ers/schema
 is_a: Response
 attributes:
