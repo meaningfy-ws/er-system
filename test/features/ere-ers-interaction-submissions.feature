@@ -3,7 +3,8 @@ Feature: ERE/ERS interaction for entity resolutions
   e.g., it has already seen the entity in a previous request, or it is a test ERE, with a pre-loaded 
   set of canonical entities.
 
-Scenario:
+Scenario: A known entity returns the canonical entity it's equivalent to
+  
   A resolution request is pushed to the ERE with an entity that is equivalent to a known 
   canonical entity. The canonical entity is returned asynchronously.
 
@@ -26,7 +27,9 @@ Then
 	type: "EntityResolution" # JSON object type, matches the LinkML class in the service schema 
 
 
-Scenario:
+Scenario: An unknown entity resolves to itself
+
+
   A resolution request is pushed to the ERE with an unknown entity, which has no equivalents already
 	resolved by the ERE
 Given 

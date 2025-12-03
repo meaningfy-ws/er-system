@@ -13,8 +13,7 @@ Then
   requestId: the ID of the rebuild request
   type: "RebuildResponse" # JSON object property, matches the LinkML class in the service schema 
 
-Scenario:
-	The ERE keeps resolving entities as usually after a rebuild request.
+Scenario: The ERE keeps resolving entities as usually after a rebuild request.
 
 	Note that, as in other tests, the exact meaning of "known/unknown entity" depends on the ERE implementation,
   e.g., it has already seen the entity in a previous request, or it is a test ERE, with a pre-loaded 
