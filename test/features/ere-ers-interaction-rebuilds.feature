@@ -17,7 +17,7 @@ Then
   type: "RebuildResponse" # JSON object property, matches the LinkML class in the service schema. 
 
 
-Scenario: The ERE keeps resolving entities as usually after a rebuild request.
+Scenario: The ERE keeps resolving entities as usually after a rebuild request
 
 	Note that, as in other tests, the exact meaning of "known/unknown entity" depends on the ERE implementation,
   e.g., it has already seen the entity in a previous request, or it is a test ERE, with a pre-loaded 
@@ -35,3 +35,15 @@ Then
 	canonicalEntity: an RDF representation of E or another entity C
 	confidenceLevel: 1.0 (if canonicalEntity is E) or a value above the min configured threshold
 	type: "EntityResolution" # JSON object type, matches the LinkML class in the service schema
+
+
+Scenario: The ERE replies with an error response to a malformed request
+
+When 
+	The ERS pushes the malformed request into the ERE requests channel
+Then 
+	The ERE asynchronously pushes an error response to the responses channel that looks like:
+
+	requestId: the ID of the malformed request
+	errorMessage: a description of the error
+	type: "ErrorResponse" # JSON object property, matches the LinkML class in the service schema. 	
