@@ -9,6 +9,8 @@
 * Same address
 * Same contact point
 
+* **Result**: they should be considered equivalent, high confidence.
+
 
 ### Case 2, Organisations with case-different names
 
@@ -18,6 +20,8 @@
 * Names differ by case only
 * Same address
 
+* **Result**: they should be considered equivalent, high confidence.
+
 
 ### Case 3, Organisations with different names, different addresses
 
@@ -26,9 +30,11 @@
 
 * Names are similar
 * Addresses are similar
-* They shouldn't match, since "Greffe de Tribunal" is a department of "Tribunal" 
 
-### Case 5, Procedures with fundamental fields matching
+* **Result**: They shouldn't match, since "Greffe de Tribunal" is a department of "Tribunal" 
+
+
+### Case 4, Procedures with fundamental fields matching
 
 * `epd:id_2023-S-210-662861_Procedure_faF7Q5dyoGpXu3Ru4RGg73`
 * `epd:id_2023-S-210-663131_Procedure_faF7Q5dyoGpXu3Ru4RGg73`
@@ -38,8 +44,11 @@
 * Same description
 * Same classification
 
+* **Result**: they should be considered equivalent, high confidence.
 
-### Case 4, Procedures with same title
+
+### Case 5, Procedures with same title
+
 * `epd:id_2023-S-210-663534_Procedure_aE3iyMRsoF9Qvy4eFQRpLT`
 * `epd:id_2023-S-210-661039_Procedure_aE3iyMRsoF9Qvy4eFQRpLT`
 
@@ -49,11 +58,15 @@
   * Lots have identical titles, identical ID values
 	* `epo:isFundedBy` points to funds with identical titles
 
+* **Result**: they should be considered equivalent, high/moderate confidence.
 
-### Case 5, Negative match between procedures
+
+### Case 6, Negative match between procedures
 
 * `epd:id_2023-S-211-665742_Procedure_faF7Q5dyoGpXu3Ru4RGg73` 
 * `epd:id_2023-S-211-665798_Procedure_faF7Q5dyoGpXu3Ru4RGg73`
 
 * Titles are: "Procedimento n.º 239X000350", "Procedimento n.º 239X000323". 
 * They're likely different procedures
+
+* **Result**: they shouldn't match.
