@@ -29,7 +29,6 @@ Then
 
 Scenario: An unknown entity resolves to itself
 
-
   A resolution request is pushed to the ERE with an unknown entity, which has no equivalents already
 	resolved by the ERE
 Given 
@@ -45,7 +44,8 @@ Then
 	type: "EntityResolution"
 
 
-Scenario:
+Scenario: An unknown entity without a sufficient similarity to known entities resolves to itself
+
   A resolution request is pushed to the ERE with an entity that is deemed similar other known
 	canonical entities, but all having a confidence score below the set threshold.
 

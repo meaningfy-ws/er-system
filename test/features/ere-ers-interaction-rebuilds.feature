@@ -1,8 +1,10 @@
 Feature: ERE/ERS interaction upon rebuild requests
+
   The ERE correctly processes a rebuild request, asynchronously replies with an acknowledgement
 	response to it, and it keeps processing resolution requests as usual after the a rebuild.
 
-Scenario:
+Scenario: The ERE acknowledges a rebuild request
+
   Upon a rebuild request pushed to the ERE, this asynchronously replies with a response that
 	indicates the request has been received and the internal state has been reset. 
 When 
