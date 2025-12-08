@@ -4,7 +4,7 @@
 
 
 
-URI: [https://w3id.org/linkml/examples/personinfo/id](https://w3id.org/linkml/examples/personinfo/id)
+URI: [ers:id](https://data.europa.eu/ers/schema/id)
 Alias: id
 
 <!-- no inheritance hierarchy -->
@@ -17,7 +17,8 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Person](Person.md) |  |  no  |
+| [CanonicalEntity](CanonicalEntity.md) | A canonical entity is an entity that the ERE has created during the resolutio... |  no  |
+| [Entity](Entity.md) | An entity is a representation of a real-world entity, as provided by the ERS |  no  |
 
 
 
@@ -26,9 +27,7 @@ Alias: id
 
 ## Properties
 
-* Range: NONE
-
-* Required: True
+* Range: [String](String.md)
 
 
 
@@ -40,20 +39,13 @@ Alias: id
 
 
 
-### Schema Source
-
-
-* from schema: https://w3id.org/linkml/examples/personinfo
-
-
-
 
 ## Mappings
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | https://w3id.org/linkml/examples/personinfo/id |
-| native | https://w3id.org/linkml/examples/personinfo/id |
+| self | ers:id |
+| native | ers:id |
 
 
 
@@ -63,14 +55,11 @@ Alias: id
 <details>
 ```yaml
 name: id
-from_schema: https://w3id.org/linkml/examples/personinfo
-rank: 1000
-identifier: true
 alias: id
-owner: Person
 domain_of:
-- Person
-required: true
+- Entity
+- CanonicalEntity
+range: string
 
 ```
 </details>

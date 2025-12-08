@@ -31,7 +31,7 @@ URI: [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/examples/personinfo
+* from schema: https://data.europa.eu/ers/schema
 
 
 
@@ -41,7 +41,7 @@ URI: [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:boolean |
-| native | https://w3id.org/linkml/examples/personinfo/boolean |
+| native | ers:boolean |
 | exact | schema:Boolean |
 
 

@@ -31,7 +31,7 @@ URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/examples/personinfo
+* from schema: https://data.europa.eu/ers/schema
 
 
 
@@ -41,6 +41,6 @@ URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | xsd:anyURI |
-| native | https://w3id.org/linkml/examples/personinfo/uriorcurie |
+| native | ers:uriorcurie |
 
 
