@@ -56,7 +56,7 @@ Given
 When 
   The ERS pushes the entity E into the requests channel
 And 
-  The entity E is computed to be similar to entities in C[], but all the confidence score is < 
+  The entity E is computed to be similar to entities in C[], but all the confidence scores are less than
   a configured threshold
 Then 
   The ERE asynchronously pushes an entity resolution object to the responses channel that contains:
@@ -65,3 +65,8 @@ Then
   canonicalEntity: an RDF representation of E
 	confidenceLevel: 1.0 (since the new canonical entity is E itself)
 	type: "EntityResolution"
+
+  TODO: from the point of view of the ERE client, this case is indistinguishable from the 
+  "An unknown entity resolves to itself" scenario. A similar test is useful to verify an 
+  ERE implementation.
+  

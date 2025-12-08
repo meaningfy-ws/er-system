@@ -3,6 +3,7 @@ Feature: ERE/ERS interaction upon rebuild requests
   The ERE correctly processes a rebuild request, asynchronously replies with an acknowledgement
 	response to it, and it keeps processing resolution requests as usual after the a rebuild.
 
+	
 Scenario: The ERE acknowledges a rebuild request
 
   Upon a rebuild request pushed to the ERE, this asynchronously replies with a response that
@@ -13,7 +14,8 @@ Then
 	The ERE asynchronously pushes a rebuild response to the rebuild responses channel that contains:
 
   requestId: the ID of the rebuild request
-  type: "RebuildResponse" # JSON object property, matches the LinkML class in the service schema 
+  type: "RebuildResponse" # JSON object property, matches the LinkML class in the service schema. 
+
 
 Scenario: The ERE keeps resolving entities as usually after a rebuild request.
 
