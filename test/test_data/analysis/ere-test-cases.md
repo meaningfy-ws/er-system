@@ -15,6 +15,8 @@
 
 This is about the Bulgarian Commission on Protection of Competition. The [test data](../notices/deduplicated_organizations/group1/) have two entities having all of legal name, address and contact details matching perfectly.
 
+Outcome: equivalent entities with high confidence.
+
 **Request**:
 
 ```javascript
@@ -137,6 +139,8 @@ epd:id_2023-S-210-662860_ReviewerOrganisationAddress_LLhJHMi9mby8ixbkfyGoWj
 
 This test case involves two German contractor organisations from the same procurement procedure, where the entity names differ only in capitalization of one character ("SE" vs "Se"), [sample data here](../notices/deduplicated_procedures/group3/).
 
+Outcome: equivalent entities with high confidence.
+
 **Request**:
 
 ```javascript
@@ -216,6 +220,8 @@ epd:id_2023-S-210-661039_ContractorOrganisationAddressModification_4jxq5KuyAaGTz
 
 This case tests a French administrative tribunal where two URIs with similar names should NOT match because they represent different organizational units - a tribunal vs. its administrative office (greffe). [Sample data here](../notices/deduplicated_organizations/group2/).
 
+Outcome: low confidence similarity, distinct entities.
+
 **Request**:
 
 ```javascript
@@ -275,8 +281,9 @@ The incoming entity becomes a new canonical entity with confidence 1.0.
 
 ## Example 4: Procedures with identical fundamental properties
 
-This case demonstrates procedures that should match because they have the same identifier, title, and classification - representing the same procurement procedure appearing in multiple notices.
-[Sample data here](../notices/deduplicated_procedures/group1/)
+This case demonstrates procedures that should match because they have the same identifier, title, and classification - representing the same procurement procedure appearing in multiple notices. [Sample data here](../notices/deduplicated_procedures/group1/).
+
+Outcome: equivalent entities with high confidence.
 
 **Request**:
 
@@ -371,7 +378,9 @@ epd:id_2023-S-210-663131_ProcedurePurpose_faF7Q5dyoGpXu3Ru4RGg73
 
 ## Example 5: Procedures with same title and identifier (Match case)
 
-Two procedures with the same identifier and title match, representing the same procurement procedure (Stuttgart 21 railway project) appearing in multiple notices. [Sample data here](../notices/deduplicated_procedures/group3/)
+Two procedures with the same identifier and title match, representing the same procurement procedure (Stuttgart 21 railway project) appearing in multiple notices. [Sample data here](../notices/deduplicated_procedures/group3/).
+
+Outcome: equivalent entities with high confidence.
 
 **Request**:
 
@@ -459,6 +468,8 @@ epd:id_2023-S-210-661039_ProcedurePurpose_aE3iyMRsoF9Qvy4eFQRpLT
 ## Example 6: Procedures with different procedure numbers (Negative case)
 
 This test validates that the ERE correctly identifies distinct procurement procedures at the same institution despite similar descriptions. The procedure number is a crucial discriminator. [Sample data here](../procedures/group4/).
+
+Outcome: distinct entities with low confidence match.
 
 **Request**:
 
