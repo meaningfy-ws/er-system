@@ -36,14 +36,3 @@ Then
 	confidenceLevel: 1.0 (if canonicalEntity is E) or a value above the min configured threshold
 	type: "EntityResolution" # JSON object type, matches the LinkML class in the service schema
 
-
-Scenario: The ERE replies with an error response to a malformed request
-
-When 
-	The ERS pushes the malformed request into the ERE requests channel
-Then 
-	The ERE asynchronously pushes an error response to the responses channel that looks like:
-
-	requestId: the ID of the malformed request
-	errorMessage: a description of the error
-	type: "ErrorResponse" # JSON object property, matches the LinkML class in the service schema. 	
