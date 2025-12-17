@@ -53,7 +53,7 @@ URI: [ers:Entity](https://data.europa.eu/ers/schema/Entity)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1 <br/> [String](String.md) | A string containing the entity ID or URI (set by the ERS or, for canonical en... | direct |
+| [id](id.md) | 0..1 <br/> [String](String.md) | A string containing the entity ID or URI (set by the ERS or, for canonical en... | direct |
 | [type](type.md) | 1 <br/> [String](String.md) | A string representing the entity type URI (based on CET) | direct |
 | [entityDataFormat](entityDataFormat.md) | 0..1 <br/> [String](String.md) | A string about the MIME format of `entityData` (e | direct |
 | [entityData](entityData.md) | 0..1 <br/> [String](String.md) | A code string representing the entity details (eg, RDF description) | direct |
@@ -122,17 +122,18 @@ from_schema: https://data.europa.eu/ers/schema
 attributes:
   id:
     name: id
-    description: 'A string containing the entity ID or URI (set by the ERS or, for
-      canonical entities, by the ERE).
-
-      '
+    description: "A string containing the entity ID or URI (set by the ERS or, for\
+      \ canonical entities, by the ERE).\nNote that the ID isn't mandatory when an\
+      \ entity is submitted for resolution, since the initial input\nmight be something\
+      \ like unstructured text, where the entity and its ID is to be recognised. \
+      \       \n"
     from_schema: https://data.europa.eu/ers/schema
     rank: 1000
     domain_of:
     - Entity
     - CanonicalEntity
     range: string
-    required: true
+    required: false
   type:
     name: type
     description: "A string representing the entity type URI (based on CET).\n\nNote\
@@ -183,10 +184,11 @@ from_schema: https://data.europa.eu/ers/schema
 attributes:
   id:
     name: id
-    description: 'A string containing the entity ID or URI (set by the ERS or, for
-      canonical entities, by the ERE).
-
-      '
+    description: "A string containing the entity ID or URI (set by the ERS or, for\
+      \ canonical entities, by the ERE).\nNote that the ID isn't mandatory when an\
+      \ entity is submitted for resolution, since the initial input\nmight be something\
+      \ like unstructured text, where the entity and its ID is to be recognised. \
+      \       \n"
     from_schema: https://data.europa.eu/ers/schema
     rank: 1000
     alias: id
@@ -195,7 +197,7 @@ attributes:
     - Entity
     - CanonicalEntity
     range: string
-    required: true
+    required: false
   type:
     name: type
     description: "A string representing the entity type URI (based on CET).\n\nNote\

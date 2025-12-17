@@ -19,7 +19,7 @@ Name: ersServiceDataSchema
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RebuildRequest](RebuildRequest.md) | A request to reset all the resolutions computed so far and rebuild them as  |
 | [RequestOrResponseMixin](RequestOrResponseMixin.md) | Root mixin to represent attributes common to both requests and results |
 | [Response](Response.md) | Root class to represent all the responses sent by the ERE |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[EntityResolution](EntityResolution.md) | An entity resolution response sent by the ERE |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[EntityResolutionResponse](EntityResolutionResponse.md) | An entity resolution response sent by the ERE |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ErrorResponse](ErrorResponse.md) | Response sent by the ERE when some error/exception occurs while processing a ... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RebuildResponse](RebuildResponse.md) | A response to a `RebuildRequest`, confirming that the rebuild process has sta... |
 

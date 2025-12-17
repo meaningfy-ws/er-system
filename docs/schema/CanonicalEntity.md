@@ -55,7 +55,7 @@ URI: [ers:CanonicalEntity](https://data.europa.eu/ers/schema/CanonicalEntity)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 0..1 <br/> [Uri](Uri.md) | The (canonical) URI of the canonical entity | direct |
+| [id](id.md) | 1 <br/> [Uri](Uri.md) | The (canonical) URI of the canonical entity | direct |
 | [type](type.md) | 1 <br/> [String](String.md) | A string representing the entity type URI (based on CET) | [Entity](Entity.md) |
 | [entityDataFormat](entityDataFormat.md) | 0..1 <br/> [String](String.md) | A string about the MIME format of `entityData` (e | [Entity](Entity.md) |
 | [entityData](entityData.md) | 0..1 <br/> [String](String.md) | A code string representing the entity details (eg, RDF description) | [Entity](Entity.md) |
@@ -68,7 +68,7 @@ URI: [ers:CanonicalEntity](https://data.europa.eu/ers/schema/CanonicalEntity)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [EntityResolution](EntityResolution.md) | [canonicalEntity](canonicalEntity.md) | range | [CanonicalEntity](CanonicalEntity.md) |
+| [EntityResolutionResponse](EntityResolutionResponse.md) | [canonicalEntity](canonicalEntity.md) | range | [CanonicalEntity](CanonicalEntity.md) |
 
 
 
@@ -129,12 +129,16 @@ attributes:
     description: 'The (canonical) URI of the canonical entity. This restricts the
       parent range to URIs only.
 
+
+      Contrary to `Entity.id`, this is always known/required for canonical entities.
+
       '
     from_schema: https://data.europa.eu/ers/schema
     domain_of:
     - Entity
     - CanonicalEntity
     range: uri
+    required: true
 
 ```
 </details>
@@ -161,6 +165,9 @@ attributes:
     description: 'The (canonical) URI of the canonical entity. This restricts the
       parent range to URIs only.
 
+
+      Contrary to `Entity.id`, this is always known/required for canonical entities.
+
       '
     from_schema: https://data.europa.eu/ers/schema
     alias: id
@@ -169,6 +176,7 @@ attributes:
     - Entity
     - CanonicalEntity
     range: uri
+    required: true
   type:
     name: type
     description: "A string representing the entity type URI (based on CET).\n\nNote\

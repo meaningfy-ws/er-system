@@ -26,7 +26,7 @@ Alias: confidenceLevel
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [EntityResolution](EntityResolution.md) | An entity resolution response sent by the ERE |  no  |
+| [EntityResolutionResponse](EntityResolutionResponse.md) | An entity resolution response sent by the ERE |  no  |
 
 
 
@@ -79,9 +79,9 @@ description: 'A 0-1 value of how confident the ERE is about associating the orig
 from_schema: https://data.europa.eu/ers/schema
 rank: 1000
 alias: confidenceLevel
-owner: EntityResolution
+owner: EntityResolutionResponse
 domain_of:
-- EntityResolution
+- EntityResolutionResponse
 range: float
 
 ```
