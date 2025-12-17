@@ -212,7 +212,7 @@ class EntityResolutionResponse(Response):
 
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'examples': [{'value': '{\n'
-                                '  "type": "EntityResolution",\n'
+                                '  "type": "EntityResolutionResponse",\n'
                                 '  "sourceEntityId": '
                                 '"http://data.europa.eu/ers/id/324fs3r345vx-q11rea",\n'
                                 '  "confidenceLevel": 0.91,\n'
@@ -316,6 +316,7 @@ class Entity(ConfiguredBaseModel):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://data.europa.eu/ers/schema'})
 
     id: Optional[str] = Field(default=None, description="""A string containing the entity ID or URI (set by the ERS or, for canonical entities, by the ERE).
+
 Note that the ID isn't mandatory when an entity is submitted for resolution, since the initial input
 might be something like unstructured text, where the entity and its ID is to be recognised.        
 """, json_schema_extra = { "linkml_meta": {'domain_of': ['Entity', 'CanonicalEntity']} })

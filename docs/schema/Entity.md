@@ -123,8 +123,8 @@ attributes:
   id:
     name: id
     description: "A string containing the entity ID or URI (set by the ERS or, for\
-      \ canonical entities, by the ERE).\nNote that the ID isn't mandatory when an\
-      \ entity is submitted for resolution, since the initial input\nmight be something\
+      \ canonical entities, by the ERE).\n\nNote that the ID isn't mandatory when\
+      \ an entity is submitted for resolution, since the initial input\nmight be something\
       \ like unstructured text, where the entity and its ID is to be recognised. \
       \       \n"
     from_schema: https://data.europa.eu/ers/schema
@@ -185,8 +185,8 @@ attributes:
   id:
     name: id
     description: "A string containing the entity ID or URI (set by the ERS or, for\
-      \ canonical entities, by the ERE).\nNote that the ID isn't mandatory when an\
-      \ entity is submitted for resolution, since the initial input\nmight be something\
+      \ canonical entities, by the ERE).\n\nNote that the ID isn't mandatory when\
+      \ an entity is submitted for resolution, since the initial input\nmight be something\
       \ like unstructured text, where the entity and its ID is to be recognised. \
       \       \n"
     from_schema: https://data.europa.eu/ers/schema

@@ -90,7 +90,7 @@ URI: [ers:EntityResolutionResponse](https://data.europa.eu/ers/schema/EntityReso
 | Value |
 | --- |
 | {
-  "type": "EntityResolution",
+  "type": "EntityResolutionResponse",
   "sourceEntityId": "http://data.europa.eu/ers/id/324fs3r345vx-q11rea",
   "confidenceLevel": 0.91,
   "requestId": "324fs3r345vx"
@@ -144,7 +144,7 @@ description: "An entity resolution response sent by the ERE.\n\nThis contains a 
   \ to the canonical entity that the ERE has associated to the original \nentity in\
   \ the request. It also reports a confidence score for the established association.\n"
 examples:
-- value: "{\n  \"type\": \"EntityResolution\",\n  \"sourceEntityId\": \"http://data.europa.eu/ers/id/324fs3r345vx-q11rea\"\
+- value: "{\n  \"type\": \"EntityResolutionResponse\",\n  \"sourceEntityId\": \"http://data.europa.eu/ers/id/324fs3r345vx-q11rea\"\
     ,\n  \"confidenceLevel\": 0.91,\n  \"requestId\": \"324fs3r345vx\"\n  \"canonicalEntity\"\
     : \n  { \n    \"type\": \"http://www.w3.org/ns/org#Organization\",\n    \"id\"\
     : \"http://data.europa.eu/ers/id/324fs3r345vx-aa32wa\",\n    \"entityData\": \"\
@@ -203,7 +203,7 @@ description: "An entity resolution response sent by the ERE.\n\nThis contains a 
   \ to the canonical entity that the ERE has associated to the original \nentity in\
   \ the request. It also reports a confidence score for the established association.\n"
 examples:
-- value: "{\n  \"type\": \"EntityResolution\",\n  \"sourceEntityId\": \"http://data.europa.eu/ers/id/324fs3r345vx-q11rea\"\
+- value: "{\n  \"type\": \"EntityResolutionResponse\",\n  \"sourceEntityId\": \"http://data.europa.eu/ers/id/324fs3r345vx-q11rea\"\
     ,\n  \"confidenceLevel\": 0.91,\n  \"requestId\": \"324fs3r345vx\"\n  \"canonicalEntity\"\
     : \n  { \n    \"type\": \"http://www.w3.org/ns/org#Organization\",\n    \"id\"\
     : \"http://data.europa.eu/ers/id/324fs3r345vx-aa32wa\",\n    \"entityData\": \"\
