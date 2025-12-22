@@ -88,7 +88,7 @@ linkml_meta = LinkMLMeta({'default_prefix': 'ers',
                           'prefix_reference': 'https://data.europa.eu/ers/schema/'},
                   'linkml': {'prefix_prefix': 'linkml',
                              'prefix_reference': 'https://w3id.org/linkml/'}},
-     'source_file': 'resources/schema/ers-core_v1.0.yaml'} )
+     'source_file': 'resources/schema/ers-core_v0.1.0.yaml'} )
 
 
 class RequestOrResponseMixin(ConfiguredBaseModel):

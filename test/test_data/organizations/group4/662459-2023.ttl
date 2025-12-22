@@ -1,8 +1,10 @@
 @prefix cccev: <http://data.europa.eu/m8g/> .
 @prefix epd: <http://data.europa.eu/a4g/resource/> .
 @prefix epo: <http://data.europa.eu/a4g/ontology#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 epd:id_2023-S-210-662459_ReviewerOrganisation_bdZjimbzCaRXbeYeBmF94j a org:Organization ;
     epo:hasLegalName "Consiliul National de Solutionare a Contestatiilor"@ro ;
