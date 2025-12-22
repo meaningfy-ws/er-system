@@ -1,4 +1,4 @@
-Made with [Mermaid chart](www.mermaidchart.com).
+Made with [Mermaid chart](http://www.mermaidchart.com).
 
 ```mermaid
 ---
@@ -20,8 +20,8 @@ sequenceDiagram
   ere_requests -) ERE_Impl: sub: EntityResolutionRequest
   ERE_Impl --) ere_requests:
   ERE_Impl ->> ERE_Impl: async resolution
-  ERE_Impl -) ere_responses: pub: EntityResolution
+  ERE_Impl -) ere_responses: pub: EntityResolutionResponse
   ere_responses --) ERE_Impl:
-  ere_responses -) client: sub: EntityResolution
+  ere_responses -) client: sub: EntityResolutionResponse
   client --) ere_responses:
 ```

@@ -1,6 +1,6 @@
 [project]
 name = "er-system"
-version = "0.0.1"
+version = "0.1.0"
 description = "A pluggable entity resolution system for data transformation pipelines"
 authors = [
     { name = "meaningfy.ws", email = "hi@meaningfy.ws" }

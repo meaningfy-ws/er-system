@@ -26,7 +26,7 @@ Alias: canonicalEntity
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [EntityResolution](EntityResolution.md) | An entity resolution response sent by the ERE |  no  |
+| [EntityResolutionResponse](EntityResolutionResponse.md) | An entity resolution response sent by the ERE |  no  |
 
 
 
@@ -80,9 +80,9 @@ description: 'The canonical entity that the ERE has associated to the original e
 from_schema: https://data.europa.eu/ers/schema
 rank: 1000
 alias: canonicalEntity
-owner: EntityResolution
+owner: EntityResolutionResponse
 domain_of:
-- EntityResolution
+- EntityResolutionResponse
 range: CanonicalEntity
 required: true
 
