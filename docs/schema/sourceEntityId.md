@@ -24,7 +24,7 @@ Alias: sourceEntityId
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [EntityResolution](EntityResolution.md) | An entity resolution response sent by the ERE |  no  |
+| [EntityResolutionResponse](EntityResolutionResponse.md) | An entity resolution response sent by the ERE |  no  |
 
 
 
@@ -76,9 +76,9 @@ description: 'The ID or URI of the original entity that has been resolved.
 from_schema: https://data.europa.eu/ers/schema
 rank: 1000
 alias: sourceEntityId
-owner: EntityResolution
+owner: EntityResolutionResponse
 domain_of:
-- EntityResolution
+- EntityResolutionResponse
 range: string
 required: true
 

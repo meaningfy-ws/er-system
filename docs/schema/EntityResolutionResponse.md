@@ -1,6 +1,6 @@
 
 
-# Class: EntityResolution 
+# Class: EntityResolutionResponse 
 
 
 _An entity resolution response sent by the ERE._
@@ -17,7 +17,7 @@ __
 
 
 
-URI: [ers:EntityResolution](https://data.europa.eu/ers/schema/EntityResolution)
+URI: [ers:EntityResolutionResponse](https://data.europa.eu/ers/schema/EntityResolutionResponse)
 
 
 
@@ -25,31 +25,31 @@ URI: [ers:EntityResolution](https://data.europa.eu/ers/schema/EntityResolution)
 
 ```mermaid
  classDiagram
-    class EntityResolution
-    click EntityResolution href "../EntityResolution/"
-      Response <|-- EntityResolution
+    class EntityResolutionResponse
+    click EntityResolutionResponse href "../EntityResolutionResponse/"
+      Response <|-- EntityResolutionResponse
         click Response href "../Response/"
       
-      EntityResolution : canonicalEntity
+      EntityResolutionResponse : canonicalEntity
         
           
     
         
         
-        EntityResolution --> "1" CanonicalEntity : canonicalEntity
+        EntityResolutionResponse --> "1" CanonicalEntity : canonicalEntity
         click CanonicalEntity href "../CanonicalEntity/"
     
 
         
-      EntityResolution : confidenceLevel
+      EntityResolutionResponse : confidenceLevel
         
-      EntityResolution : metadata
+      EntityResolutionResponse : metadata
         
-      EntityResolution : requestId
+      EntityResolutionResponse : requestId
         
-      EntityResolution : sourceEntityId
+      EntityResolutionResponse : sourceEntityId
         
-      EntityResolution : type
+      EntityResolutionResponse : type
         
       
 ```
@@ -60,7 +60,7 @@ URI: [ers:EntityResolution](https://data.europa.eu/ers/schema/EntityResolution)
 
 ## Inheritance
 * [Response](Response.md) [ [RequestOrResponseMixin](RequestOrResponseMixin.md)]
-    * **EntityResolution**
+    * **EntityResolutionResponse**
 
 
 
@@ -90,7 +90,7 @@ URI: [ers:EntityResolution](https://data.europa.eu/ers/schema/EntityResolution)
 | Value |
 | --- |
 | {
-  "type": "EntityResolution",
+  "type": "EntityResolutionResponse",
   "sourceEntityId": "http://data.europa.eu/ers/id/324fs3r345vx-q11rea",
   "confidenceLevel": 0.91,
   "requestId": "324fs3r345vx"
@@ -123,8 +123,8 @@ URI: [ers:EntityResolution](https://data.europa.eu/ers/schema/EntityResolution)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ers:EntityResolution |
-| native | ers:EntityResolution |
+| self | ers:EntityResolutionResponse |
+| native | ers:EntityResolutionResponse |
 
 
 
@@ -139,12 +139,12 @@ URI: [ers:EntityResolution](https://data.europa.eu/ers/schema/EntityResolution)
 
 <details>
 ```yaml
-name: EntityResolution
+name: EntityResolutionResponse
 description: "An entity resolution response sent by the ERE.\n\nThis contains a reference\
   \ to the canonical entity that the ERE has associated to the original \nentity in\
   \ the request. It also reports a confidence score for the established association.\n"
 examples:
-- value: "{\n  \"type\": \"EntityResolution\",\n  \"sourceEntityId\": \"http://data.europa.eu/ers/id/324fs3r345vx-q11rea\"\
+- value: "{\n  \"type\": \"EntityResolutionResponse\",\n  \"sourceEntityId\": \"http://data.europa.eu/ers/id/324fs3r345vx-q11rea\"\
     ,\n  \"confidenceLevel\": 0.91,\n  \"requestId\": \"324fs3r345vx\"\n  \"canonicalEntity\"\
     : \n  { \n    \"type\": \"http://www.w3.org/ns/org#Organization\",\n    \"id\"\
     : \"http://data.europa.eu/ers/id/324fs3r345vx-aa32wa\",\n    \"entityData\": \"\
@@ -164,7 +164,7 @@ attributes:
     from_schema: https://data.europa.eu/ers/schema
     rank: 1000
     domain_of:
-    - EntityResolution
+    - EntityResolutionResponse
     range: CanonicalEntity
     required: true
   sourceEntityId:
@@ -175,7 +175,7 @@ attributes:
     from_schema: https://data.europa.eu/ers/schema
     rank: 1000
     domain_of:
-    - EntityResolution
+    - EntityResolutionResponse
     required: true
   confidenceLevel:
     name: confidenceLevel
@@ -188,7 +188,7 @@ attributes:
     from_schema: https://data.europa.eu/ers/schema
     rank: 1000
     domain_of:
-    - EntityResolution
+    - EntityResolutionResponse
     range: float
 
 ```
@@ -198,12 +198,12 @@ attributes:
 
 <details>
 ```yaml
-name: EntityResolution
+name: EntityResolutionResponse
 description: "An entity resolution response sent by the ERE.\n\nThis contains a reference\
   \ to the canonical entity that the ERE has associated to the original \nentity in\
   \ the request. It also reports a confidence score for the established association.\n"
 examples:
-- value: "{\n  \"type\": \"EntityResolution\",\n  \"sourceEntityId\": \"http://data.europa.eu/ers/id/324fs3r345vx-q11rea\"\
+- value: "{\n  \"type\": \"EntityResolutionResponse\",\n  \"sourceEntityId\": \"http://data.europa.eu/ers/id/324fs3r345vx-q11rea\"\
     ,\n  \"confidenceLevel\": 0.91,\n  \"requestId\": \"324fs3r345vx\"\n  \"canonicalEntity\"\
     : \n  { \n    \"type\": \"http://www.w3.org/ns/org#Organization\",\n    \"id\"\
     : \"http://data.europa.eu/ers/id/324fs3r345vx-aa32wa\",\n    \"entityData\": \"\
@@ -223,9 +223,9 @@ attributes:
     from_schema: https://data.europa.eu/ers/schema
     rank: 1000
     alias: canonicalEntity
-    owner: EntityResolution
+    owner: EntityResolutionResponse
     domain_of:
-    - EntityResolution
+    - EntityResolutionResponse
     range: CanonicalEntity
     required: true
   sourceEntityId:
@@ -236,9 +236,9 @@ attributes:
     from_schema: https://data.europa.eu/ers/schema
     rank: 1000
     alias: sourceEntityId
-    owner: EntityResolution
+    owner: EntityResolutionResponse
     domain_of:
-    - EntityResolution
+    - EntityResolutionResponse
     range: string
     required: true
   confidenceLevel:
@@ -252,9 +252,9 @@ attributes:
     from_schema: https://data.europa.eu/ers/schema
     rank: 1000
     alias: confidenceLevel
-    owner: EntityResolution
+    owner: EntityResolutionResponse
     domain_of:
-    - EntityResolution
+    - EntityResolutionResponse
     range: float
   requestId:
     name: requestId
@@ -264,7 +264,7 @@ attributes:
       '
     from_schema: https://data.europa.eu/ers/schema
     alias: requestId
-    owner: EntityResolution
+    owner: EntityResolutionResponse
     domain_of:
     - Request
     - Response
@@ -281,7 +281,7 @@ attributes:
     rank: 1000
     designates_type: true
     alias: type
-    owner: EntityResolution
+    owner: EntityResolutionResponse
     domain_of:
     - RequestOrResponseMixin
     - Entity
@@ -295,7 +295,7 @@ attributes:
     from_schema: https://data.europa.eu/ers/schema
     rank: 1000
     alias: metadata
-    owner: EntityResolution
+    owner: EntityResolutionResponse
     domain_of:
     - RequestOrResponseMixin
     range: string
