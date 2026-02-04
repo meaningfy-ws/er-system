@@ -1,3 +1,9 @@
+# Migrated
+
+The contents of this repo has been migrated to various [OP-TED repos](https://github.com/OP-TED).
+
+[This is the closest match](https://github.com/OP-TED/entity-resolution-service) to this one.
+
 # Entity Resolution System
 
 A pluggable entity resolution system for data transformation pipelines.
